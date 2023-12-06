@@ -28,10 +28,6 @@ public class JacarandaBushBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     public void performBonemeal(ServerLevel world, RandomSource rand, BlockPos pos, BlockState state) {
-        JacarandaBushBlock flowering = (JacarandaBushBlock) (this == BYGBlocks.JACARANDA_BUSH.get() ? BYGBlocks.FLOWERING_JACARANDA_BUSH.get() : BYGBlocks.FLOWERING_JACARANDA_BUSH.get());
-        if (flowering.defaultBlockState().canSurvive(world, pos)) {
-            flowering.placeAt(world, pos, 1);
-        }
     }
 
     public void placeAt(LevelAccessor p_196390_1_, BlockPos p_196390_2_, int p_196390_3_) {

@@ -22,19 +22,10 @@ import potionstudios.byg.common.*;
 import potionstudios.byg.common.block.BYGBlockTags;
 import potionstudios.byg.common.block.BYGBlocks;
 import potionstudios.byg.common.entity.BYGEntities;
-import potionstudios.byg.common.entity.ai.village.poi.BYGPoiTypes;
-import potionstudios.byg.common.entity.villager.BYGVillagerType;
-import potionstudios.byg.config.BYGConfigHandler;
-import potionstudios.byg.config.ConfigVersionTracker;
-import potionstudios.byg.config.SettingsConfig;
 import potionstudios.byg.mixin.access.BlockEntityTypeAccess;
 import potionstudios.byg.mixin.access.DeltaFeatureAccess;
 import potionstudios.byg.mixin.access.PoiTypesAccess;
 import potionstudios.byg.reg.BlockRegistryObject;
-import potionstudios.byg.server.command.ReloadConfigsCommand;
-import potionstudios.byg.server.command.ResetConfigsCommand;
-import potionstudios.byg.server.command.UpdateConfigsCommand;
-import potionstudios.byg.server.command.ValidateConfigsCommand;
 import potionstudios.byg.util.FileUtils;
 import potionstudios.byg.util.MLBlockTags;
 import potionstudios.byg.util.ModPlatform;
@@ -56,12 +47,6 @@ public class BYG {
 
     public static void commonLoad() {
         registerBlockTagReplacements();
-
-        PoiTypesAccess.byg_invokeRegisterBlockStates(BYGPoiTypes.FORAGER.asHolder(), BYGPoiTypes.FORAGER.asHolder().value().matchingStates());
-
-        String loadAllConfigs = BYGConfigHandler.loadAllConfigs(false, false);
-
-        logConfigErrors();
 
         BYGEntities.registerSpawnPlacements();
         FileUtils.backUpDirectory(ModPlatform.INSTANCE.configPath(), "last_working_configs_backup");
@@ -100,21 +85,9 @@ public class BYG {
     }
 
     public static void attachCommands(final CommandDispatcher<CommandSourceStack> dispatcher, final Commands.CommandSelection environmentType) {
-        LiteralArgumentBuilder<CommandSourceStack> bygCommands = Commands.literal(BYG.MOD_ID);
-
-        LiteralArgumentBuilder<CommandSourceStack> config = Commands.literal("config");
-        config.then(ReloadConfigsCommand.register());
-        config.then(UpdateConfigsCommand.register());
-        config.then(ValidateConfigsCommand.register());
-        config.then(ResetConfigsCommand.register());
-
-        bygCommands.then(config);
-
-        dispatcher.register(bygCommands);
     }
 
     public static void threadSafeCommonLoad() {
-        BYGVillagerType.setVillagerForBYGBiomes();
         appendBlocksToBlockEntities();
 
         DeltaFeatureAccess.byg_setCANNOT_REPLACE(
@@ -178,58 +151,18 @@ public class BYG {
     }
 
     public static void logWarning(String msg) {
-        SettingsConfig.LoggerSettings loggerSettings = SettingsConfig.getConfig().loggerSettings();
-        if (loggerSettings.logWarnings() && loggerSettings.exclude().stream().noneMatch(msg::contains)) {
-            LOGGER.warn(msg);
-        }
+        LOGGER.warn(msg);
     }
 
     public static void logInfo(String msg) {
-        SettingsConfig.LoggerSettings loggerSettings = SettingsConfig.getConfig().loggerSettings();
-        if (loggerSettings.logInfo() && loggerSettings.exclude().stream().noneMatch(msg::contains)) {
-            LOGGER.info(msg);
-        }
+        LOGGER.info(msg);
     }
 
     public static void logDebug(String msg) {
-        SettingsConfig.LoggerSettings loggerSettings = SettingsConfig.getConfig().loggerSettings();
-        if (loggerSettings.logDebug() && loggerSettings.exclude().stream().noneMatch(msg::contains)) {
-            LOGGER.debug(msg);
-        }
+        LOGGER.debug(msg);
     }
 
     public static void logError(String msg) {
         LOGGER.error(msg);
-    }
-
-    static {
-        ConfigVersionTracker.getConfig(new ConfigVersionTracker(ModPlatform.INSTANCE.configPath().toFile().exists() ? 0 : BYGConstants.CONFIG_VERSION), false);
-    }
-
-    public static void logConfigErrors() {
-        if (!BYGConfigHandler.CONFIG_EXCEPTIONS.isEmpty()) {
-            for (int i = 0; i < 3; i++) {
-                BYG.logError("");
-            }
-            BYG.logError("=".repeat(100));
-            BYG.logError("");
-            BYG.logError("BYG config(s) errors have occurred, BYG has used default settings instead! Errors:");
-            BYG.logError("");
-            int count = 0;
-            for (Exception e : BYGConfigHandler.CONFIG_EXCEPTIONS) {
-                BYG.logError(count + ". " + e.getMessage());
-                BYG.logError("");
-                count++;
-            }
-
-            BYG.logError("");
-            BYG.logError("This error goes away after you fix or delete your configs and you restart your game.");
-            BYG.logError("");
-            BYG.logError("=".repeat(100));
-
-            for (int i = 0; i < 3; i++) {
-                BYG.logError("");
-            }
-        }
     }
 }

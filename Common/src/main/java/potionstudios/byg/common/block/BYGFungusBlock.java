@@ -13,20 +13,16 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FungusBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import potionstudios.byg.common.block.sapling.GrowingPatterns;
-import potionstudios.byg.util.FeatureGrowerFromBlockPattern;
 
 import java.util.List;
 
-public class BYGFungusBlock extends FungusBlock implements FeatureGrowerFromBlockPattern {
+public class BYGFungusBlock extends FungusBlock {
 
-    private ImmutableList<Pair<List<Vec3i>, SimpleWeightedRandomList<GrowingPatterns.FeatureSpawner>>> patternsToSpawner = ImmutableList.of();
     private final TagKey<Block> groundTag;
 
     public BYGFungusBlock(Properties $$0, TagKey<Block> groundTag) {
         super($$0, null, null);
         this.groundTag = groundTag;
-        ENTRIES.add(() -> this);
     }
 
     @Override
@@ -41,16 +37,6 @@ public class BYGFungusBlock extends FungusBlock implements FeatureGrowerFromBloc
 
     @Override
     public void performBonemeal(ServerLevel serverLevel, RandomSource random, BlockPos pos, BlockState state) {
-        this.growFeature(this, serverLevel, pos, random);
     }
 
-    @Override
-    public ImmutableList<Pair<List<Vec3i>, SimpleWeightedRandomList<GrowingPatterns.FeatureSpawner>>> byg_getPatterns() {
-        return this.patternsToSpawner;
-    }
-
-    @Override
-    public void byg_setPatterns(ImmutableList<Pair<List<Vec3i>, SimpleWeightedRandomList<GrowingPatterns.FeatureSpawner>>> map) {
-        this.patternsToSpawner = map;
-    }
 }

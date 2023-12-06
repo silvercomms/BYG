@@ -24,9 +24,6 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.fml.loading.FMLPaths;
 import potionstudios.byg.BYG;
 import potionstudios.byg.common.item.BYGItems;
-import potionstudios.byg.network.ForgeNetworkHandler;
-import potionstudios.byg.network.packet.BYGS2CPacket;
-import terrablender.api.SurfaceRuleManager;
 
 import java.nio.file.Path;
 import java.util.function.Supplier;
@@ -42,11 +39,6 @@ public class ForgeModPlatform implements ModPlatform {
     @Override
     public boolean isModLoaded(String isLoaded) {
         return ModList.get().isLoaded(isLoaded);
-    }
-
-    @Override
-    public <P extends BYGS2CPacket> void sendToClient(ServerPlayer player, P packet) {
-        ForgeNetworkHandler.sendToPlayer(player, packet);
     }
 
     @Override
@@ -77,16 +69,6 @@ public class ForgeModPlatform implements ModPlatform {
     @Override
     public void addTagsUpdatedListener(TagsUpdatedEvent onTagsUpdated) {
         MinecraftForge.EVENT_BUS.addListener((final net.minecraftforge.event.TagsUpdatedEvent event) -> onTagsUpdated.onTagsUpdated(event.getRegistryAccess()));
-    }
-
-    @Override
-    public boolean canTreeGrowWithEvent(Level level, RandomSource source, BlockPos pos) {
-        return !net.minecraftforge.event.ForgeEventFactory.blockGrowFeature(level, source, pos, null).getResult().equals(Event.Result.DENY);
-    }
-
-    @Override
-    public SurfaceRules.RuleSource getTerraBlenderNetherSurfaceRules(SurfaceRules.RuleSource fallBack) {
-        return SurfaceRuleManager.getNamespacedRules(SurfaceRuleManager.RuleCategory.NETHER, fallBack);
     }
 
     @Override

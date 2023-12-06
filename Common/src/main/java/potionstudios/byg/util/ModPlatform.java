@@ -15,7 +15,6 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.material.Fluid;
-import potionstudios.byg.network.packet.BYGS2CPacket;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -42,8 +41,6 @@ public interface ModPlatform {
 
     boolean isModLoaded(String isLoaded);
 
-    <P extends BYGS2CPacket> void sendToClient(ServerPlayer player, P packet);
-
     String tagNameSpace();
 
     String curseForgeURL();
@@ -56,19 +53,9 @@ public interface ModPlatform {
 
     void addTagsUpdatedListener(TagsUpdatedEvent event);
 
-    boolean canTreeGrowWithEvent(Level level, RandomSource source, BlockPos pos);
-
-    SurfaceRules.RuleSource getTerraBlenderNetherSurfaceRules(SurfaceRules.RuleSource fallBack);
-
     @FunctionalInterface
     interface TagsUpdatedEvent {
         void onTagsUpdated(RegistryAccess access);
-    }
-
-    default <P extends BYGS2CPacket> void sendToAllClients(List<ServerPlayer> players, P packet) {
-        for (ServerPlayer player : players) {
-            sendToClient(player, packet);
-        }
     }
 
     SpawnEggItem createSpawnEgg(Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor, Item.Properties properties);

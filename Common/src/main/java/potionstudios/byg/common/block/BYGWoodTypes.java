@@ -118,16 +118,6 @@ public enum BYGWoodTypes {
     public void init() {
         if (initialized)
             return;
-        if (!builder.excludes.contains(BlockType.SAPLING)) {
-            this.growerItem = switch (builder.growerItemType) {
-                case SAPLING -> BYGBlocks.createSapling(builder.growerItemGroundTag, name + "_sapling");
-                case ODDITY -> BYGBlocks.createMushroom(builder.growerItemGroundTag, name + "_oddity");
-                case FUNGUS -> BYGBlocks.createFungus(builder.growerItemGroundTag, name + "_fungus");
-                case MUSHROOM -> BYGBlocks.createMushroom(builder.growerItemGroundTag, name + "_mushroom");
-                case WART -> BYGBlocks.createFungus(builder.growerItemGroundTag, name + "_wart");
-            };
-            BYGItems.createGrowerItem(growerItem, builder.growerItemType == GrowerItemType.SAPLING);
-        }
 
         // In Block Family
 
@@ -159,7 +149,6 @@ public enum BYGWoodTypes {
         BYGItems.createItem(planks);
         this.bookshelf = BYGBlocks.createBookshelf(name + "_bookshelf");
         BYGItems.createItem(bookshelf);
-        this.craftingTable = BYGBlocks.createCraftingTable(name + "_crafting_table");
         BYGItems.createItem(craftingTable);
 
         // In Block Family
@@ -221,10 +210,6 @@ public enum BYGWoodTypes {
         return planks;
     }
 
-    public BlockRegistryObject<Block> growerItem() {
-        return growerItem;
-    }
-
     public WoodType woodType() {
         return woodType;
     }
@@ -252,10 +237,6 @@ public enum BYGWoodTypes {
 
     public BlockRegistryObject<Block> bookshelf() {
         return bookshelf;
-    }
-
-    public BlockRegistryObject<Block> craftingTable() {
-        return craftingTable;
     }
 
     public BlockRegistryObject<Block> stairs() {

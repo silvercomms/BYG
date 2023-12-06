@@ -9,7 +9,6 @@ import potionstudios.byg.BYG;
 import potionstudios.byg.common.block.BYGBlocks;
 import potionstudios.byg.common.entity.BYGEntities;
 import potionstudios.byg.common.item.BYGItems;
-import potionstudios.byg.common.world.biome.BYGBiomes;
 import potionstudios.byg.reg.RegistrationProvider;
 
 import java.io.InputStream;
@@ -20,7 +19,6 @@ public class EnUsLanguageProvider extends LanguageProvider {
 
     public static final Map<RegistrationProvider<?>, String> PROVIDER_TO_ID = Util.make(new HashMap<>(), map -> {
         map.put(BYGEntities.PROVIDER, "entity");
-        map.put(BYGBiomes.PROVIDER, "biome");
         map.put(BYGBlocks.PROVIDER, "block");
         map.put(BYGItems.PROVIDER, "item");
 //        map.put(BYGWorldPresets.PROVIDER, "generator");

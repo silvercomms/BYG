@@ -1,6 +1,7 @@
 package potionstudios.byg;
 
 import corgitaco.corgilib.CorgiLibFabric;
+import corgitaco.corgilib.network.FabricNetworkHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -21,13 +22,8 @@ import potionstudios.byg.common.BYGFuels;
 import potionstudios.byg.common.BYGStrippables;
 import potionstudios.byg.common.block.BYGScaffoldingBlock;
 import potionstudios.byg.common.entity.BYGEntities;
-import potionstudios.byg.common.entity.manowar.ManOWar;
-import potionstudios.byg.common.entity.npc.TradesConfig;
-import potionstudios.byg.common.entity.pumpkinwarden.PumpkinWarden;
 import potionstudios.byg.common.item.BYGItems;
 import potionstudios.byg.core.BYGRegistry;
-import potionstudios.byg.entry.BYGTerraBlenderEntry;
-import potionstudios.byg.network.FabricNetworkHandler;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -66,8 +62,6 @@ public class BYGFabric implements ModInitializer {
     }
 
     public static void registerEntityAttributes() {
-        FabricDefaultAttributeRegistry.register(BYGEntities.MAN_O_WAR.get(), ManOWar.createAttributes());
-        FabricDefaultAttributeRegistry.register(BYGEntities.PUMPKIN_WARDEN.get(), PumpkinWarden.createAttributes());
     }
 
     public static void afterRegistriesFreeze() {
@@ -77,35 +71,8 @@ public class BYGFabric implements ModInitializer {
         BYG.threadSafeLoadFinish();
         BYGCompostables.COMPOSTABLES.get().forEach(CompostingChanceRegistry.INSTANCE::add);
 
-        registerVillagerTrades();
         BYGStrippables.strippableLogsBYG(StrippableBlockRegistry::register);
-        BYGTerraBlenderEntry.readOverworldSurfaceRules();
         BYG.logInfo("\"Oh The Biomes You'll Go\" after registries freeze event complete!");
-    }
-
-    private static void registerVillagerTrades() {
-        TradesConfig tradesConfig = TradesConfig.getConfig();
-        if (tradesConfig.enabled()) {
-            tradesConfig.tradesByProfession().forEach((professionKey, int2ObjectMap) -> {
-                        Optional<VillagerProfession> profession = BuiltInRegistries.VILLAGER_PROFESSION.getOptional(professionKey);
-                        if (profession.isPresent()) {
-                            int2ObjectMap.forEach((level, configListing) ->
-                                    TradeOfferHelper.registerVillagerOffers(profession.get(), level, itemListings ->
-                                            itemListings.addAll(Arrays.asList(configListing))
-                                    )
-                            );
-                        } else {
-                            BYG.logWarning("\"%s\" is not a registered villager profession, skipping trade entry...".formatted(professionKey.toString()));
-                        }
-                    }
-            );
-
-            tradesConfig.wanderingTraderTrades().forEach(
-                    (level, listings) -> TradeOfferHelper.registerWanderingTraderOffers(level, itemListings -> itemListings.addAll(Arrays.asList(listings)))
-            );
-        } else {
-            BYG.logWarning("Ignoring villager/wandering trader trades added by BYG.");
-        }
     }
 
     private static void registryBootStrap() {

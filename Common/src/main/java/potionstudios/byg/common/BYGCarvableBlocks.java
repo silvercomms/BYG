@@ -18,14 +18,10 @@ public class BYGCarvableBlocks {
             OVERGROWN_DACITE, PODZOL_DACITE, SOAPSTONE,
             ROCKY_STONE, MOSSY_STONE, OVERGROWN_STONE,
             LUSH_DIRT, PEAT,
-            WAILING_NYLIUM,
-            SYTHIAN_NYLIUM,
             WARPED_SOUL_SAND, WARPED_SOUL_SOIL, BRIMSTONE,
-            QUARTZITE_SAND, AMETRINE_ORE,
+            AMETRINE_ORE,
             BUDDING_AMETRINE_ORE, CRYPTIC_REDSTONE_ORE, CRYPTIC_STONE,
-            MAGMATIC_STONE, CRYPTIC_MAGMA_BLOCK, () -> BYGBlockFamilies.ETHER_STONE.get(BYGBlockFamily.BlockVariant.BASE_BLOCK),
-                () -> BYGBlockFamilies.VERMILION_SCULK.get(BYGBlockFamily.BlockVariant.BASE_BLOCK), IMPARIUS_PHYLIUM, IVIS_PHYLIUM,
-                () -> BYGBlockFamilies.ETHER.get(BYGBlockFamily.BlockVariant.SPREADABLE), () -> BYGBlockFamilies.NIGHTSHADE.get(BYGBlockFamily.BlockVariant.SPREADABLE),
+            MAGMATIC_STONE, CRYPTIC_MAGMA_BLOCK,
             () -> Blocks.MAGMA_BLOCK
         );
     }

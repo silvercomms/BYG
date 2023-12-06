@@ -20,9 +20,6 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.material.Fluid;
 import potionstudios.byg.BYG;
 import potionstudios.byg.common.item.BYGItems;
-import potionstudios.byg.network.FabricNetworkHandler;
-import potionstudios.byg.network.packet.BYGS2CPacket;
-import terrablender.api.SurfaceRuleManager;
 
 import java.nio.file.Path;
 import java.util.function.Supplier;
@@ -43,11 +40,6 @@ public class FabricModPlatform implements ModPlatform {
     @Override
     public boolean isModLoaded(String isLoaded) {
         return FabricLoader.getInstance().isModLoaded(isLoaded);
-    }
-
-    @Override
-    public <P extends BYGS2CPacket> void sendToClient(ServerPlayer player, P packet) {
-        FabricNetworkHandler.sendToPlayer(player, packet);
     }
 
     @Override
@@ -78,16 +70,6 @@ public class FabricModPlatform implements ModPlatform {
     @Override
     public void addTagsUpdatedListener(TagsUpdatedEvent event) {
         TAGS_UPDATED_EVENT.register(event);
-    }
-
-    @Override
-    public boolean canTreeGrowWithEvent(Level level, RandomSource source, BlockPos pos) {
-        return true;
-    }
-
-    @Override
-    public SurfaceRules.RuleSource getTerraBlenderNetherSurfaceRules(SurfaceRules.RuleSource fallBack) {
-        return SurfaceRuleManager.getNamespacedRules(SurfaceRuleManager.RuleCategory.NETHER, fallBack);
     }
 
     @Override

@@ -17,7 +17,7 @@
   "biome.byg.bulbis_gardens": "Bulbis Gardens",
   "biome.byg.canadian_shield": "Canadian Shield",
   "biome.byg.cardinal_tundra": "Cardinal Tundra",
-  "biome.byg:sakura_grove": "Sakura Grove",
+  "biome.byg.cherry_blossom_forest": "Cherry Blossom Forest",
   "biome.byg.cika_woods": "Cika Woods",
   "biome.byg.coconino_meadow": "Coconino Meadow",
   "biome.byg.coniferous_forest": "Coniferous Forest",
@@ -29,10 +29,10 @@
   "biome.byg.dacite_shore": "Dacite Shore",
   "biome.byg.dead_sea": "Dead Sea",
   "biome.byg.ebony_woods": "Ebony Woods",
-
+  "biome.byg.embur_bog": "Embur Bog",
   "biome.byg.ethereal_islands": "Ethereal Islands",
   "biome.byg.firecracker_shrubland": "Firecracker Shrubland",
-  "biome.byg.enchanted_tangle": "Enchanted Tangle",
+  "biome.byg.forgotten_forest": "Forgotten Forest",
   "biome.byg.fragment_forest": "Fragment Forest",
   "biome.byg.frosted_coniferous_forest": "Frosted Coniferous Forest",
   "biome.byg.frosted_taiga": "Frosted Taiga",
@@ -41,7 +41,7 @@
   "biome.byg.howling_peaks": "Howling Peaks",
   "biome.byg.imparius_grove": "Imparius Grove",
   "biome.byg.ivis_fields": "Ivis Fields",
-  "biome.byg.jacaranda_jungle": "Jacaranda Jungle",
+  "biome.byg.jacaranda_forest": "Jacaranda Forest",
   "biome.byg.lush_stacks": "Lush Stacks",
   "biome.byg.magma_wastes": "Magma Wastes",
   "biome.byg.maple_taiga": "Maple Taiga",
@@ -56,13 +56,13 @@
   "biome.byg.redwood_thicket": "Redwood Thicket",
   "biome.byg.rose_fields": "Rose Fields",
   "biome.byg.shattered_glacier": "Shattered Glacier",
-
+  "biome.byg.shulkren_forest": "Shulkren Forest",
   "biome.byg.sierra_badlands": "Sierra Badlands",
   "biome.byg.skyris_vale": "Skyris Vale",
   "biome.byg.subzero_hypogeal": "Subzero Hypogeal",
   "biome.byg.sythian_torrids": "Sythian Torrids",
   "biome.byg.temperate_grove": "Temperate Grove",
-  "biome.byg.forgotten_forest": "Forgotten Forest",
+  "biome.byg.temperate_rainforest": "Temperate Rainforest",
   "biome.byg.tropical_rainforest": "Tropical Rainforest",
   "biome.byg.twilight_meadow": "Twilight Meadow",
   "biome.byg.viscal_isles": "Viscal Isles",
@@ -91,7 +91,7 @@
   "biomepedia.biome.byg.bulbis_gardens.desc": "An alien and strange garden with tangled Bulbis Oddities. Players can find End Cities and Bulbis Anomalies here.",
   "biomepedia.biome.byg.canadian_shield.desc": "A highland region home to the beautiful Hydrangea Flower. Players can find Aspen, Spruce, Pine, & Confierous Trees here. Spruce Villages are common here along with Mossy Cobblestone.",
   "biomepedia.biome.byg.cardinal_tundra.desc": "A desolate yet vibrant tundra. Players can find lots of Rabbits here and the occasional Snow Village.",
-  "biomepedia.biome.byg:sakura_grove.desc": "A blossoming:sakura Forest home to variety of Sakura Cherry Blossom trees with the occasional Birch tree. Players can find an abundance of animals, flowers, and decorational blocks here and it has a beautiful aesthetic. ",
+  "biomepedia.biome.byg.cherry_blossom_forest.desc": "A blossoming Sakura Forest home to variety of Cherry Blossom trees with the occasional Birch tree. Players can find an abundance of animals, flowers, and decorational blocks here and it has a beautiful aesthetic. ",
   "biomepedia.biome.byg.cika_woods.desc": "An ancient and mysterious autumnal taiga. Players can find large pumpkins, cika trees, and it is rumored there have been sightings of Pumpkin Wards here and some players have even stumbled upon their Pumpkin Patch. ",
   "biomepedia.biome.byg.coconino_meadow.desc": "A open vibrant highland meadow with shrubs, sunflowers, tulips, lots of vegetation and Lush Grass Blocks/Lush Dirt. Ancient Ruin Villages can be found here as well as Spruce Villages. In the real world, the Coconino Meadow is located in Arizona, USA in the Northern Region near the Grand Canyon.",
   "biomepedia.biome.byg.coniferous_forest.desc": "A dense taiga with towering Confierous trees, occasional Spruce trees can also be found here. Mossy Boulders and lush cold vegetation/flora can be found here. Spruce Villages can also be seen commonly.",
@@ -160,6 +160,7 @@
   "block.byg.aspen_door": "Aspen Door",
   "block.byg.aspen_fence": "Aspen Fence",
   "block.byg.aspen_fence_gate": "Aspen Fence Gate",
+  "block.byg.aspen_hanging_sign": "Aspen Hanging Sign",
   "block.byg.aspen_leaves": "Aspen Leaves",
   "block.byg.aspen_log": "Aspen Log",
   "block.byg.aspen_planks": "Aspen Planks",
@@ -169,6 +170,7 @@
   "block.byg.aspen_slab": "Aspen Slab",
   "block.byg.aspen_stairs": "Aspen Stairs",
   "block.byg.aspen_trapdoor": "Aspen Trapdoor",
+  "block.byg.aspen_wall_hanging_sign": "Aspen Wall Hanging Sign",
   "block.byg.aspen_wall_sign": "Aspen Wall Sign",
   "block.byg.aspen_wood": "Aspen Wood",
   "block.byg.baobab_bookshelf": "Baobab Bookshelf",
@@ -178,6 +180,7 @@
   "block.byg.baobab_fence": "Baobab Fence",
   "block.byg.baobab_fence_gate": "Baobab Fence Gate",
   "block.byg.baobab_fruit_block": "Baobab Fruit Block",
+  "block.byg.baobab_hanging_sign": "Baobab Hanging Sign",
   "block.byg.baobab_leaves": "Baobab Leaves",
   "block.byg.baobab_log": "Baobab Log",
   "block.byg.baobab_planks": "Baobab Planks",
@@ -187,6 +190,7 @@
   "block.byg.baobab_slab": "Baobab Slab",
   "block.byg.baobab_stairs": "Baobab Stairs",
   "block.byg.baobab_trapdoor": "Baobab Trapdoor",
+  "block.byg.baobab_wall_hanging_sign": "Baobab Wall Hanging Sign",
   "block.byg.baobab_wall_sign": "Baobab Wall Sign",
   "block.byg.baobab_wood": "Baobab Wood",
   "block.byg.barrel_cactus": "Barrel Cactus",
@@ -210,6 +214,7 @@
   "block.byg.blue_enchanted_door": "Blue Enchanted Door",
   "block.byg.blue_enchanted_fence": "Blue Enchanted Fence",
   "block.byg.blue_enchanted_fence_gate": "Blue Enchanted Fence Gate",
+  "block.byg.blue_enchanted_hanging_sign": "Blue Enchanted Hanging Sign",
   "block.byg.blue_enchanted_leaves": "Blue Enchanted Leaves",
   "block.byg.blue_enchanted_log": "Blue Enchanted Log",
   "block.byg.blue_enchanted_planks": "Blue Enchanted Planks",
@@ -219,15 +224,16 @@
   "block.byg.blue_enchanted_slab": "Blue Enchanted Slab",
   "block.byg.blue_enchanted_stairs": "Blue Enchanted Stairs",
   "block.byg.blue_enchanted_trapdoor": "Blue Enchanted Trapdoor",
+  "block.byg.blue_enchanted_wall_hanging_sign": "Blue Enchanted Wall Hanging Sign",
   "block.byg.blue_enchanted_wall_sign": "Blue Enchanted Wall Sign",
   "block.byg.blue_enchanted_wood": "Blue Enchanted Wood",
-
-
-
-
-
-
-
+  "block.byg.blue_nether_brick_slab": "Blue Nether Brick Slab",
+  "block.byg.blue_nether_brick_stairs": "Blue Nether Brick Stairs",
+  "block.byg.blue_nether_brick_wall": "Blue Nether Brick Wall",
+  "block.byg.blue_nether_bricks": "Blue Nether Bricks",
+  "block.byg.blue_nether_gold_ore": "Blue Nether Gold Ore",
+  "block.byg.blue_nether_quartz_ore": "Blue Nether Quartz Ore",
+  "block.byg.blue_netherrack": "Blue Netherrack",
   "block.byg.blue_rose_bush": "Blue Rose Bush",
   "block.byg.blue_sage": "Blue Sage",
   "block.byg.blue_sand": "Blue Sand",
@@ -259,6 +265,7 @@
   "block.byg.bulbis_door": "Bulbis Door",
   "block.byg.bulbis_fence": "Bulbis Fence",
   "block.byg.bulbis_fence_gate": "Bulbis Fence Gate",
+  "block.byg.bulbis_hanging_sign": "Bulbis Hanging Sign",
   "block.byg.bulbis_oddity": "Bulbis Oddity",
   "block.byg.bulbis_phycelium": "Bulbis Phycelium",
   "block.byg.bulbis_planks": "Bulbis Planks",
@@ -270,6 +277,7 @@
   "block.byg.bulbis_stairs": "Bulbis Stairs",
   "block.byg.bulbis_stem": "Bulbis Stem",
   "block.byg.bulbis_trapdoor": "Bulbis Trapdoor",
+  "block.byg.bulbis_wall_hanging_sign": "Bulbis Wall Hanging Sign",
   "block.byg.bulbis_wall_sign": "Bulbis Wall Sign",
   "block.byg.bulbis_wood": "Bulbis Wood",
   "block.byg.california_poppy": "California Poppy",
@@ -284,21 +292,23 @@
   "block.byg.cattail_thatch_carpet": "Cattail Thatch Carpet",
   "block.byg.cattail_thatch_slab": "Cattail Thatch Slab",
   "block.byg.cattail_thatch_stairs": "Cattail Thatch Stairs",
-  "block.byg:sakura_cherry_bookshelf": "Sakura Cherry Bookshelf",
-  "block.byg:sakura_cherry_button": "Sakura Cherry Button",
-  "block.byg:sakura_cherry_crafting_table": "Sakura Cherry Crafting Table",
-  "block.byg:sakura_cherry_door": "Sakura Cherry Door",
-  "block.byg:sakura_cherry_fence": "Sakura Cherry Fence",
-  "block.byg:sakura_cherry_fence_gate": "Sakura Cherry Fence Gate",
-  "block.byg:sakura_cherry_log": "Sakura Cherry Log",
-  "block.byg:sakura_cherry_planks": "Sakura Cherry Planks",
-  "block.byg:sakura_cherry_pressure_plate": "Sakura Cherry Pressure Plate",
-  "block.byg:sakura_cherry_sign": "Sakura Cherry Sign",
-  "block.byg:sakura_cherry_slab": "Sakura Cherry Slab",
-  "block.byg:sakura_cherry_stairs": "Sakura Cherry Stairs",
-  "block.byg:sakura_cherry_trapdoor": "Sakura Cherry Trapdoor",
-  "block.byg:sakura_cherry_wall_sign": "Sakura Cherry Wall Sign",
-  "block.byg:sakura_cherry_wood": "Sakura Cherry Wood",
+  "block.byg.cherry_bookshelf": "Cherry Bookshelf",
+  "block.byg.cherry_button": "Cherry Button",
+  "block.byg.cherry_crafting_table": "Cherry Crafting Table",
+  "block.byg.cherry_door": "Cherry Door",
+  "block.byg.cherry_fence": "Cherry Fence",
+  "block.byg.cherry_fence_gate": "Cherry Fence Gate",
+  "block.byg.cherry_hanging_sign": "Cherry Hanging Sign",
+  "block.byg.cherry_log": "Cherry Log",
+  "block.byg.cherry_planks": "Cherry Planks",
+  "block.byg.cherry_pressure_plate": "Cherry Pressure Plate",
+  "block.byg.cherry_sign": "Cherry Sign",
+  "block.byg.cherry_slab": "Cherry Slab",
+  "block.byg.cherry_stairs": "Cherry Stairs",
+  "block.byg.cherry_trapdoor": "Cherry Trapdoor",
+  "block.byg.cherry_wall_hanging_sign": "Cherry Wall Hanging Sign",
+  "block.byg.cherry_wall_sign": "Cherry Wall Sign",
+  "block.byg.cherry_wood": "Cherry Wood",
   "block.byg.chiseled_fungal_imparius": "Chiseled Fungal Imparius",
   "block.byg.chiseled_fungal_imparius_slab": "Chiseled Fungal Imparius Slab",
   "block.byg.chiseled_fungal_imparius_stairs": "Chiseled Fungal Imparius Stairs",
@@ -311,10 +321,10 @@
   "block.byg.chiseled_therium_slab": "Chiseled Therium Slab",
   "block.byg.chiseled_therium_stairs": "Chiseled Therium Stairs",
   "block.byg.chiseled_therium_wall": "Chiseled Therium Wall",
-
-
-
-
+  "block.byg.chiseled_travertine": "Chiseled Travertine",
+  "block.byg.chiseled_travertine_slab": "Chiseled Travertine Slab",
+  "block.byg.chiseled_travertine_stairs": "Chiseled Travertine Stairs",
+  "block.byg.chiseled_travertine_wall": "Chiseled Travertine Wall",
   "block.byg.chiseled_windswept_sandstone": "Chiseled Windswept Sandstone",
   "block.byg.chiseled_windswept_sandstone_slab": "Chiseled Windswept Sandstone Slab",
   "block.byg.chiseled_windswept_sandstone_stairs": "Chiseled Windswept Sandstone Stairs",
@@ -325,6 +335,7 @@
   "block.byg.cika_door": "Cika Door",
   "block.byg.cika_fence": "Cika Fence",
   "block.byg.cika_fence_gate": "Cika Fence Gate",
+  "block.byg.cika_hanging_sign": "Cika Hanging Sign",
   "block.byg.cika_leaves": "Cika Leaves",
   "block.byg.cika_log": "Cika Log",
   "block.byg.cika_planks": "Cika Planks",
@@ -334,6 +345,7 @@
   "block.byg.cika_slab": "Cika Slab",
   "block.byg.cika_stairs": "Cika Stairs",
   "block.byg.cika_trapdoor": "Cika Trapdoor",
+  "block.byg.cika_wall_hanging_sign": "Cika Wall Hanging Sign",
   "block.byg.cika_wall_sign": "Cika Wall Sign",
   "block.byg.cika_wood": "Cika Wood",
   "block.byg.clover_patch": "Clover Patch",
@@ -346,7 +358,7 @@
   "block.byg.cracked_red_rock_brick_wall": "Cracked Red Rock Brick Wall",
   "block.byg.cracked_red_rock_bricks": "Cracked Red Rock Bricks",
   "block.byg.cracked_red_sand": "Cracked Red Sand",
-
+  "block.byg.cracked_scoria_stone_bricks": "Cracked Scoria Stone Bricks",
   "block.byg.crimson_berry_bush": "Crimson Berry Bush",
   "block.byg.crocus": "Crocus",
   "block.byg.cryptic_bramble": "Cryptic Bramble",
@@ -374,6 +386,7 @@
   "block.byg.cypress_door": "Cypress Door",
   "block.byg.cypress_fence": "Cypress Fence",
   "block.byg.cypress_fence_gate": "Cypress Fence Gate",
+  "block.byg.cypress_hanging_sign": "Cypress Hanging Sign",
   "block.byg.cypress_leaves": "Cypress Leaves",
   "block.byg.cypress_log": "Cypress Log",
   "block.byg.cypress_planks": "Cypress Planks",
@@ -383,6 +396,7 @@
   "block.byg.cypress_slab": "Cypress Slab",
   "block.byg.cypress_stairs": "Cypress Stairs",
   "block.byg.cypress_trapdoor": "Cypress Trapdoor",
+  "block.byg.cypress_wall_hanging_sign": "Cypress Wall Hanging Sign",
   "block.byg.cypress_wall_sign": "Cypress Wall Sign",
   "block.byg.cypress_wood": "Cypress Wood",
   "block.byg.dacite": "Dacite",
@@ -413,6 +427,7 @@
   "block.byg.ebony_door": "Ebony Door",
   "block.byg.ebony_fence": "Ebony Fence",
   "block.byg.ebony_fence_gate": "Ebony Fence Gate",
+  "block.byg.ebony_hanging_sign": "Ebony Hanging Sign",
   "block.byg.ebony_leaves": "Ebony Leaves",
   "block.byg.ebony_log": "Ebony Log",
   "block.byg.ebony_planks": "Ebony Planks",
@@ -422,33 +437,36 @@
   "block.byg.ebony_slab": "Ebony Slab",
   "block.byg.ebony_stairs": "Ebony Stairs",
   "block.byg.ebony_trapdoor": "Ebony Trapdoor",
+  "block.byg.ebony_wall_hanging_sign": "Ebony Wall Hanging Sign",
   "block.byg.ebony_wall_sign": "Ebony Wall Sign",
   "block.byg.ebony_wood": "Ebony Wood",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "block.byg.embur_bookshelf": "Embur Bookshelf",
+  "block.byg.embur_button": "Embur Button",
+  "block.byg.embur_crafting_table": "Embur Crafting Table",
+  "block.byg.embur_door": "Embur Door",
+  "block.byg.embur_fence": "Embur Fence",
+  "block.byg.embur_fence_gate": "Embur Fence Gate",
+  "block.byg.embur_gel_block": "Embur Gel Block",
+  "block.byg.embur_gel_branch": "Embur Gel Branch",
+  "block.byg.embur_gel_vines": "Embur Gel Vines",
+  "block.byg.embur_gel_vines_plant": "Embur Gel Vines Plant",
+  "block.byg.embur_hanging_sign": "Embur Hanging Sign",
+  "block.byg.embur_hyphae": "Embur Hyphae",
+  "block.byg.embur_lily": "Embur Lily",
+  "block.byg.embur_nylium": "Embur Nylium",
+  "block.byg.embur_pedu": "Embur Pedu",
+  "block.byg.embur_planks": "Embur Planks",
+  "block.byg.embur_pressure_plate": "Embur Pressure Plate",
+  "block.byg.embur_roots": "Embur Roots",
+  "block.byg.embur_sign": "Embur Sign",
+  "block.byg.embur_slab": "Embur Slab",
+  "block.byg.embur_sprouts": "Embur Sprouts",
+  "block.byg.embur_stairs": "Embur Stairs",
+  "block.byg.embur_trapdoor": "Embur Trapdoor",
+  "block.byg.embur_wall_hanging_sign": "Embur Wall Hanging Sign",
+  "block.byg.embur_wall_sign": "Embur Wall Sign",
+  "block.byg.embur_wart": "Embur Wart",
+  "block.byg.emeraldite_ore": "Emeraldite Ore",
   "block.byg.end_sand": "End Sand",
   "block.byg.ender_lily": "Ender Lily",
   "block.byg.ether_bookshelf": "Ether Bookshelf",
@@ -461,6 +479,7 @@
   "block.byg.ether_fence_gate": "Ether Fence Gate",
   "block.byg.ether_foliage": "Ether Foliage",
   "block.byg.ether_grass": "Ether Grass",
+  "block.byg.ether_hanging_sign": "Ether Hanging Sign",
   "block.byg.ether_leaves": "Ether Leaves",
   "block.byg.ether_log": "Ether Log",
   "block.byg.ether_phylium": "Ether Phylium",
@@ -476,6 +495,7 @@
   "block.byg.ether_stone_stairs": "Ether Stone Stairs",
   "block.byg.ether_stone_wall": "Ether Stone Wall",
   "block.byg.ether_trapdoor": "Ether Trapdoor",
+  "block.byg.ether_wall_hanging_sign": "Ether Wall Hanging Sign",
   "block.byg.ether_wall_sign": "Ether Wall Sign",
   "block.byg.ether_wood": "Ether Wood",
   "block.byg.fairy_slipper": "Fairy Slipper",
@@ -485,6 +505,7 @@
   "block.byg.fir_door": "Fir Door",
   "block.byg.fir_fence": "Fir Fence",
   "block.byg.fir_fence_gate": "Fir Fence Gate",
+  "block.byg.fir_hanging_sign": "Fir Hanging Sign",
   "block.byg.fir_leaves": "Fir Leaves",
   "block.byg.fir_log": "Fir Log",
   "block.byg.fir_planks": "Fir Planks",
@@ -494,6 +515,7 @@
   "block.byg.fir_slab": "Fir Slab",
   "block.byg.fir_stairs": "Fir Stairs",
   "block.byg.fir_trapdoor": "Fir Trapdoor",
+  "block.byg.fir_wall_hanging_sign": "Fir Wall Hanging Sign",
   "block.byg.fir_wall_sign": "Fir Wall Sign",
   "block.byg.fir_wood": "Fir Wood",
   "block.byg.firecracker_flower_bush": "Firecracker Flower Bush",
@@ -531,6 +553,7 @@
   "block.byg.green_enchanted_door": "Green Enchanted Door",
   "block.byg.green_enchanted_fence": "Green Enchanted Fence",
   "block.byg.green_enchanted_fence_gate": "Green Enchanted Fence Gate",
+  "block.byg.green_enchanted_hanging_sign": "Green Enchanted Hanging Sign",
   "block.byg.green_enchanted_leaves": "Green Enchanted Leaves",
   "block.byg.green_enchanted_log": "Green Enchanted Log",
   "block.byg.green_enchanted_planks": "Green Enchanted Planks",
@@ -540,6 +563,7 @@
   "block.byg.green_enchanted_slab": "Green Enchanted Slab",
   "block.byg.green_enchanted_stairs": "Green Enchanted Stairs",
   "block.byg.green_enchanted_trapdoor": "Green Enchanted Trapdoor",
+  "block.byg.green_enchanted_wall_hanging_sign": "Green Enchanted Wall Hanging Sign",
   "block.byg.green_enchanted_wall_sign": "Green Enchanted Wall Sign",
   "block.byg.green_enchanted_wood": "Green Enchanted Wood",
   "block.byg.green_mushroom": "Green Mushroom",
@@ -556,6 +580,7 @@
   "block.byg.holly_door": "Holly Door",
   "block.byg.holly_fence": "Holly Fence",
   "block.byg.holly_fence_gate": "Holly Fence Gate",
+  "block.byg.holly_hanging_sign": "Holly Hanging Sign",
   "block.byg.holly_leaves": "Holly Leaves",
   "block.byg.holly_log": "Holly Log",
   "block.byg.holly_planks": "Holly Planks",
@@ -565,6 +590,7 @@
   "block.byg.holly_slab": "Holly Slab",
   "block.byg.holly_stairs": "Holly Stairs",
   "block.byg.holly_trapdoor": "Holly Trapdoor",
+  "block.byg.holly_wall_hanging_sign": "Holly Wall Hanging Sign",
   "block.byg.holly_wall_sign": "Holly Wall Sign",
   "block.byg.holly_wood": "Holly Wood",
   "block.byg.honey_barrel_cactus": "Honey Barrel Cactus",
@@ -582,6 +608,7 @@
   "block.byg.imparius_door": "Imparius Door",
   "block.byg.imparius_fence": "Imparius Fence",
   "block.byg.imparius_fence_gate": "Imparius Fence Gate",
+  "block.byg.imparius_hanging_sign": "Imparius Hanging Sign",
   "block.byg.imparius_hyphae": "Imparius Hyphae",
   "block.byg.imparius_mushroom": "Imparius Mushroom",
   "block.byg.imparius_mushroom_block": "Imparius Mushroom Block",
@@ -596,6 +623,7 @@
   "block.byg.imparius_trapdoor": "Imparius Trapdoor",
   "block.byg.imparius_vine": "Imparius Vine",
   "block.byg.imparius_vine_plant": "Imparius Vine Plant",
+  "block.byg.imparius_wall_hanging_sign": "Imparius Wall Hanging Sign",
   "block.byg.imparius_wall_sign": "Imparius Wall Sign",
   "block.byg.incan_lily": "Incan Lily",
   "block.byg.indigo_jacaranda_bush": "Indigo Jacaranda Bush",
@@ -612,6 +640,7 @@
   "block.byg.jacaranda_door": "Jacaranda Door",
   "block.byg.jacaranda_fence": "Jacaranda Fence",
   "block.byg.jacaranda_fence_gate": "Jacaranda Fence Gate",
+  "block.byg.jacaranda_hanging_sign": "Jacaranda Hanging Sign",
   "block.byg.jacaranda_leaves": "Jacaranda Leaves",
   "block.byg.jacaranda_log": "Jacaranda Log",
   "block.byg.jacaranda_planks": "Jacaranda Planks",
@@ -621,6 +650,7 @@
   "block.byg.jacaranda_slab": "Jacaranda Slab",
   "block.byg.jacaranda_stairs": "Jacaranda Stairs",
   "block.byg.jacaranda_trapdoor": "Jacaranda Trapdoor",
+  "block.byg.jacaranda_wall_hanging_sign": "Jacaranda Wall Hanging Sign",
   "block.byg.jacaranda_wall_sign": "Jacaranda Wall Sign",
   "block.byg.jacaranda_wood": "Jacaranda Wood",
   "block.byg.japanese_orchid": "Japanese Orchid",
@@ -628,26 +658,28 @@
   "block.byg.joshua_leaves": "Joshua Leaves",
   "block.byg.joshua_sapling": "Joshua Sapling",
   "block.byg.kovan_flower": "Kovan Flower",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "block.byg.lament_bookshelf": "Lament Bookshelf",
+  "block.byg.lament_button": "Lament Button",
+  "block.byg.lament_crafting_table": "Lament Crafting Table",
+  "block.byg.lament_door": "Lament Door",
+  "block.byg.lament_fence": "Lament Fence",
+  "block.byg.lament_fence_gate": "Lament Fence Gate",
+  "block.byg.lament_hanging_sign": "Lament Hanging Sign",
+  "block.byg.lament_leaves": "Lament Leaves",
+  "block.byg.lament_log": "Lament Log",
+  "block.byg.lament_planks": "Lament Planks",
+  "block.byg.lament_pressure_plate": "Lament Pressure Plate",
+  "block.byg.lament_sapling": "Lament Sapling",
+  "block.byg.lament_sign": "Lament Sign",
+  "block.byg.lament_slab": "Lament Slab",
+  "block.byg.lament_sprouts": "Lament Sprouts",
+  "block.byg.lament_stairs": "Lament Stairs",
+  "block.byg.lament_trapdoor": "Lament Trapdoor",
+  "block.byg.lament_vine": "Lament Vine",
+  "block.byg.lament_vine_plant": "Lament Vine Plant",
+  "block.byg.lament_wall_hanging_sign": "Lament Wall Hanging Sign",
+  "block.byg.lament_wall_sign": "Lament Wall Sign",
+  "block.byg.lament_wood": "Lament Wood",
   "block.byg.large_subzero_crystal_bud": "Large Subzero Crystal Bud",
   "block.byg.large_therium_crystal_bud": "Large Therium Crystal Bud",
   "block.byg.lazarus_bellflower": "Lazarus Bellflower",
@@ -666,6 +698,7 @@
   "block.byg.mahogany_door": "Mahogany Door",
   "block.byg.mahogany_fence": "Mahogany Fence",
   "block.byg.mahogany_fence_gate": "Mahogany Fence Gate",
+  "block.byg.mahogany_hanging_sign": "Mahogany Hanging Sign",
   "block.byg.mahogany_leaves": "Mahogany Leaves",
   "block.byg.mahogany_log": "Mahogany Log",
   "block.byg.mahogany_planks": "Mahogany Planks",
@@ -675,6 +708,7 @@
   "block.byg.mahogany_slab": "Mahogany Slab",
   "block.byg.mahogany_stairs": "Mahogany Stairs",
   "block.byg.mahogany_trapdoor": "Mahogany Trapdoor",
+  "block.byg.mahogany_wall_hanging_sign": "Mahogany Wall Hanging Sign",
   "block.byg.mahogany_wall_sign": "Mahogany Wall Sign",
   "block.byg.mahogany_wood": "Mahogany Wood",
   "block.byg.maple_bookshelf": "Maple Bookshelf",
@@ -683,6 +717,7 @@
   "block.byg.maple_door": "Maple Door",
   "block.byg.maple_fence": "Maple Fence",
   "block.byg.maple_fence_gate": "Maple Fence Gate",
+  "block.byg.maple_hanging_sign": "Maple Hanging Sign",
   "block.byg.maple_leaves": "Maple Leaves",
   "block.byg.maple_log": "Maple Log",
   "block.byg.maple_planks": "Maple Planks",
@@ -692,6 +727,7 @@
   "block.byg.maple_slab": "Maple Slab",
   "block.byg.maple_stairs": "Maple Stairs",
   "block.byg.maple_trapdoor": "Maple Trapdoor",
+  "block.byg.maple_wall_hanging_sign": "Maple Wall Hanging Sign",
   "block.byg.maple_wall_sign": "Maple Wall Sign",
   "block.byg.maple_wood": "Maple Wood",
   "block.byg.medium_subzero_crystal_bud": "Medium Subzero Crystal Bud",
@@ -705,7 +741,8 @@
   "block.byg.mossy_stone_slab": "Mossy Stone Slab",
   "block.byg.mossy_stone_stairs": "Mossy Stone Stairs",
   "block.byg.mossy_stone_wall": "Mossy Stone Wall",
-
+  "block.byg.mycelium_netherrack": "Mycelium Netherrack",
+  "block.byg.nether_bristle": "Nether Bristle",
   "block.byg.nightshade_berry_bush": "Nightshade Berry Bush",
   "block.byg.nightshade_bookshelf": "Nightshade Bookshelf",
   "block.byg.nightshade_button": "Nightshade Button",
@@ -713,6 +750,7 @@
   "block.byg.nightshade_door": "Nightshade Door",
   "block.byg.nightshade_fence": "Nightshade Fence",
   "block.byg.nightshade_fence_gate": "Nightshade Fence Gate",
+  "block.byg.nightshade_hanging_sign": "Nightshade Hanging Sign",
   "block.byg.nightshade_leaves": "Nightshade Leaves",
   "block.byg.nightshade_log": "Nightshade Log",
   "block.byg.nightshade_phylium": "Nightshade Phylium",
@@ -725,6 +763,7 @@
   "block.byg.nightshade_sprouts": "Nightshade Sprouts",
   "block.byg.nightshade_stairs": "Nightshade Stairs",
   "block.byg.nightshade_trapdoor": "Nightshade Trapdoor",
+  "block.byg.nightshade_wall_hanging_sign": "Nightshade Wall Hanging Sign",
   "block.byg.nightshade_wall_sign": "Nightshade Wall Sign",
   "block.byg.nightshade_wood": "Nightshade Wood",
   "block.byg.oddity_bush": "Oddity Bush",
@@ -742,6 +781,7 @@
   "block.byg.osiria_rose": "Osiria Rose",
   "block.byg.overgrown_crimson_blackstone": "Overgrown Crimson Blackstone",
   "block.byg.overgrown_dacite": "Overgrown Dacite",
+  "block.byg.overgrown_netherrack": "Overgrown Netherrack",
   "block.byg.overgrown_stone": "Overgrown Stone",
   "block.byg.packed_black_ice": "Packed Black Ice",
   "block.byg.palm_bookshelf": "Palm Bookshelf",
@@ -750,6 +790,7 @@
   "block.byg.palm_door": "Palm Door",
   "block.byg.palm_fence": "Palm Fence",
   "block.byg.palm_fence_gate": "Palm Fence Gate",
+  "block.byg.palm_hanging_sign": "Palm Hanging Sign",
   "block.byg.palm_leaves": "Palm Leaves",
   "block.byg.palm_log": "Palm Log",
   "block.byg.palm_planks": "Palm Planks",
@@ -759,6 +800,7 @@
   "block.byg.palm_slab": "Palm Slab",
   "block.byg.palm_stairs": "Palm Stairs",
   "block.byg.palm_trapdoor": "Palm Trapdoor",
+  "block.byg.palm_wall_hanging_sign": "Palm Wall Hanging Sign",
   "block.byg.palm_wall_sign": "Palm Wall Sign",
   "block.byg.palm_wood": "Palm Wood",
   "block.byg.palo_verde_leaves": "Palo Verde Leaves",
@@ -776,6 +818,7 @@
   "block.byg.pine_door": "Pine Door",
   "block.byg.pine_fence": "Pine Fence",
   "block.byg.pine_fence_gate": "Pine Fence Gate",
+  "block.byg.pine_hanging_sign": "Pine Hanging Sign",
   "block.byg.pine_leaves": "Pine Leaves",
   "block.byg.pine_log": "Pine Log",
   "block.byg.pine_planks": "Pine Planks",
@@ -785,14 +828,15 @@
   "block.byg.pine_slab": "Pine Slab",
   "block.byg.pine_stairs": "Pine Stairs",
   "block.byg.pine_trapdoor": "Pine Trapdoor",
+  "block.byg.pine_wall_hanging_sign": "Pine Wall Hanging Sign",
   "block.byg.pine_wall_sign": "Pine Wall Sign",
   "block.byg.pine_wood": "Pine Wood",
   "block.byg.pink_allium": "Pink Allium",
   "block.byg.pink_allium_flower_bush": "Pink Allium Flower Bush",
   "block.byg.pink_anemone": "Pink Anemone",
-  "block.byg.pink_cherry_foliage": "Pink Sakura Cherry Foliage",
-  "block.byg.pink_cherry_leaves": "Pink Sakura Cherry Leaves",
-  "block.byg.pink_cherry_sapling": "Pink Sakura Cherry Sapling",
+  "block.byg.pink_cherry_foliage": "Pink Cherry Foliage",
+  "block.byg.pink_cherry_leaves": "Pink Cherry Leaves",
+  "block.byg.pink_cherry_sapling": "Pink Cherry Sapling",
   "block.byg.pink_chiseled_sandstone": "Pink Chiseled Sandstone",
   "block.byg.pink_cut_sandstone": "Pink Cut Sandstone",
   "block.byg.pink_daffodil": "Pink Daffodil",
@@ -805,10 +849,10 @@
   "block.byg.polished_soapstone_slab": "Polished Soapstone Slab",
   "block.byg.polished_soapstone_stairs": "Polished Soapstone Stairs",
   "block.byg.polished_soapstone_wall": "Polished Soapstone Wall",
-
-
-
-
+  "block.byg.polished_travertine": "Polished Travertine",
+  "block.byg.polished_travertine_slab": "Polished Travertine Slab",
+  "block.byg.polished_travertine_stairs": "Polished Travertine Stairs",
+  "block.byg.polished_travertine_wall": "Polished Travertine Wall",
   "block.byg.pollen_block": "Pollen Block",
   "block.byg.potted_alpine_bellflower": "Potted Alpine Bellflower",
   "block.byg.potted_angelica": "Potted Angelica",
@@ -834,6 +878,7 @@
   "block.byg.potted_daffodil": "Potted Daffodil",
   "block.byg.potted_death_cap": "Potted Death Cap",
   "block.byg.potted_ebony_sapling": "Potted Ebony Sapling",
+  "block.byg.potted_embur_wart": "Potted Embur Wart",
   "block.byg.potted_ether_sapling": "Potted Ether Sapling",
   "block.byg.potted_fir_sapling": "Potted Fir Sapling",
   "block.byg.potted_firecracker_flower_bush": "Potted Firecracker Flower Bush",
@@ -857,6 +902,7 @@
   "block.byg.potted_jacaranda_sapling": "Potted Jacaranda Sapling",
   "block.byg.potted_joshua_sapling": "Potted Joshua Sapling",
   "block.byg.potted_kovan_flower": "Potted Kovan Flower",
+  "block.byg.potted_lament_sapling": "Potted Lament Sapling",
   "block.byg.potted_lazarus_bellflower": "Potted Lazarus Bellflower",
   "block.byg.potted_lollipop_flower": "Potted Lollipop Flower",
   "block.byg.potted_magenta_tulip": "Potted Magenta Tulip",
@@ -876,7 +922,7 @@
   "block.byg.potted_pine_sapling": "Potted Pine Sapling",
   "block.byg.potted_pink_allium": "Potted Pink Allium",
   "block.byg.potted_pink_anemone": "Potted Pink Anemone",
-  "block.byg.potted_pink_cherry_sapling": "Potted Pink Sakura Cherry Sapling",
+  "block.byg.potted_pink_cherry_sapling": "Potted Pink Cherry Sapling",
   "block.byg.potted_pink_daffodil": "Potted Pink Daffodil",
   "block.byg.potted_prickly_pear_cactus": "Potted Prickly Pear Cactus",
   "block.byg.potted_protea_flower": "Potted Protea Flower",
@@ -892,17 +938,18 @@
   "block.byg.potted_richea": "Potted Richea",
   "block.byg.potted_rose": "Potted Rose",
   "block.byg.potted_shrub": "Potted Shrub",
-
+  "block.byg.potted_shulkren_fungus": "Potted Shulkren Fungus",
   "block.byg.potted_silver_maple_sapling": "Potted Silver Maple Sapling",
   "block.byg.potted_silver_vase_flower": "Potted Silver Vase Flower",
   "block.byg.potted_skyris_sapling": "Potted Skyris Sapling",
   "block.byg.potted_snowdrops": "Potted Snowdrops",
   "block.byg.potted_soul_shroom": "Potted Soul Shroom",
   "block.byg.potted_sythian_fungus": "Potted Sythian Fungus",
+  "block.byg.potted_torch_ginger": "Potted Torch Ginger",
   "block.byg.potted_violet_leather_flower": "Potted Violet Leather Flower",
   "block.byg.potted_weeping_milkcap": "Potted Weeping Milkcap",
   "block.byg.potted_white_anemone": "Potted White Anemone",
-  "block.byg.potted_white_cherry_sapling": "Potted White Sakura Cherry Sapling",
+  "block.byg.potted_white_cherry_sapling": "Potted White Cherry Sapling",
   "block.byg.potted_white_mangrove_sapling": "Potted White Mangrove Sapling",
   "block.byg.potted_white_puffball": "Potted White Puffball",
   "block.byg.potted_white_sage": "Potted White Sage",
@@ -912,7 +959,7 @@
   "block.byg.potted_winter_scilla": "Potted Winter Scilla",
   "block.byg.potted_winter_succulent": "Potted Winter Succulent",
   "block.byg.potted_witch_hazel_sapling": "Potted Witch Hazel Sapling",
-
+  "block.byg.potted_withering_oak_sapling": "Potted Withering Oak Sapling",
   "block.byg.potted_wood_blewit": "Potted Wood Blewit",
   "block.byg.potted_yellow_birch_sapling": "Potted Yellow Birch Sapling",
   "block.byg.potted_yellow_daffodil": "Potted Yellow Daffodil",
@@ -946,6 +993,7 @@
   "block.byg.rainbow_eucalyptus_door": "Rainbow Eucalyptus Door",
   "block.byg.rainbow_eucalyptus_fence": "Rainbow Eucalyptus Fence",
   "block.byg.rainbow_eucalyptus_fence_gate": "Rainbow Eucalyptus Fence Gate",
+  "block.byg.rainbow_eucalyptus_hanging_sign": "Rainbow Eucalyptus Hanging Sign",
   "block.byg.rainbow_eucalyptus_leaves": "Rainbow Eucalyptus Leaves",
   "block.byg.rainbow_eucalyptus_log": "Rainbow Eucalyptus Log",
   "block.byg.rainbow_eucalyptus_planks": "Rainbow Eucalyptus Planks",
@@ -955,6 +1003,7 @@
   "block.byg.rainbow_eucalyptus_slab": "Rainbow Eucalyptus Slab",
   "block.byg.rainbow_eucalyptus_stairs": "Rainbow Eucalyptus Stairs",
   "block.byg.rainbow_eucalyptus_trapdoor": "Rainbow Eucalyptus Trapdoor",
+  "block.byg.rainbow_eucalyptus_wall_hanging_sign": "Rainbow Eucalyptus Wall Hanging Sign",
   "block.byg.rainbow_eucalyptus_wall_sign": "Rainbow Eucalyptus Wall Sign",
   "block.byg.rainbow_eucalyptus_wood": "Rainbow Eucalyptus Wood",
   "block.byg.raw_pendorite_block": "Raw Pendorite Block",
@@ -981,6 +1030,7 @@
   "block.byg.redwood_door": "Redwood Door",
   "block.byg.redwood_fence": "Redwood Fence",
   "block.byg.redwood_fence_gate": "Redwood Fence Gate",
+  "block.byg.redwood_hanging_sign": "Redwood Hanging Sign",
   "block.byg.redwood_leaves": "Redwood Leaves",
   "block.byg.redwood_log": "Redwood Log",
   "block.byg.redwood_planks": "Redwood Planks",
@@ -990,6 +1040,7 @@
   "block.byg.redwood_slab": "Redwood Slab",
   "block.byg.redwood_stairs": "Redwood Stairs",
   "block.byg.redwood_trapdoor": "Redwood Trapdoor",
+  "block.byg.redwood_wall_hanging_sign": "Redwood Wall Hanging Sign",
   "block.byg.redwood_wall_sign": "Redwood Wall Sign",
   "block.byg.redwood_wood": "Redwood Wood",
   "block.byg.richea": "Richea",
@@ -1003,31 +1054,31 @@
   "block.byg.rose": "Rose",
   "block.byg.scorched_bush": "Scorched Bush",
   "block.byg.scorched_grass": "Scorched Grass",
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "block.byg.scoria_cobblestone": "Scoria Cobblestone",
+  "block.byg.scoria_cobblestone_slab": "Scoria Cobblestone Slab",
+  "block.byg.scoria_cobblestone_stairs": "Scoria Cobblestone Stairs",
+  "block.byg.scoria_cobblestone_wall": "Scoria Cobblestone Wall",
+  "block.byg.scoria_pillar": "Scoria Pillar",
+  "block.byg.scoria_stone": "Scoria Stone",
+  "block.byg.scoria_stone_slab": "Scoria Stone Slab",
+  "block.byg.scoria_stone_stairs": "Scoria Stone Stairs",
+  "block.byg.scoria_stone_wall": "Scoria Stone Wall",
+  "block.byg.scoria_stonebrick_slab": "Scoria Stonebrick Slab",
+  "block.byg.scoria_stonebrick_stairs": "Scoria Stonebrick Stairs",
+  "block.byg.scoria_stonebrick_wall": "Scoria Stonebrick Wall",
+  "block.byg.scoria_stonebricks": "Scoria Stonebricks",
   "block.byg.shelf_fungi": "Shelf Fungi",
   "block.byg.shiny_chiseled_therium": "Shiny Chiseled Therium",
   "block.byg.shiny_chiseled_therium_slab": "Shiny Chiseled Therium Slab",
   "block.byg.shiny_chiseled_therium_stairs": "Shiny Chiseled Therium Stairs",
   "block.byg.shiny_chiseled_therium_wall": "Shiny Chiseled Therium Wall",
   "block.byg.shrub": "Shrub",
-
-
-
-
-
-
+  "block.byg.shulkren_fungus": "Shulkren Fungus",
+  "block.byg.shulkren_moss_blanket": "Shulkren Moss Blanket",
+  "block.byg.shulkren_phylium": "Shulkren Phylium",
+  "block.byg.shulkren_vine": "Shulkren Vine",
+  "block.byg.shulkren_vine_plant": "Shulkren Vine Plant",
+  "block.byg.shulkren_wart_block": "Shulkren Wart Block",
   "block.byg.silver_maple_leaves": "Silver Maple Leaves",
   "block.byg.silver_maple_sapling": "Silver Maple Sapling",
   "block.byg.silver_vase_flower": "Silver Vase Flower",
@@ -1037,6 +1088,7 @@
   "block.byg.skyris_door": "Skyris Door",
   "block.byg.skyris_fence": "Skyris Fence",
   "block.byg.skyris_fence_gate": "Skyris Fence Gate",
+  "block.byg.skyris_hanging_sign": "Skyris Hanging Sign",
   "block.byg.skyris_leaves": "Skyris Leaves",
   "block.byg.skyris_log": "Skyris Log",
   "block.byg.skyris_planks": "Skyris Planks",
@@ -1047,6 +1099,7 @@
   "block.byg.skyris_stairs": "Skyris Stairs",
   "block.byg.skyris_trapdoor": "Skyris Trapdoor",
   "block.byg.skyris_vine": "Skyris Vine",
+  "block.byg.skyris_wall_hanging_sign": "Skyris Wall Hanging Sign",
   "block.byg.skyris_wall_sign": "Skyris Wall Sign",
   "block.byg.skyris_wood": "Skyris Wood",
   "block.byg.small_subzero_crystal_bud": "Small Subzero Crystal Bud",
@@ -1082,14 +1135,16 @@
   "block.byg.stripped_blue_enchanted_wood": "Stripped Blue Enchanted Wood",
   "block.byg.stripped_bulbis_stem": "Stripped Bulbis Stem",
   "block.byg.stripped_bulbis_wood": "Stripped Bulbis Wood",
-  "block.byg.stripped_sakura_cherry_log": "Stripped Sakura Cherry Log",
-  "block.byg.stripped_sakura_cherry_wood": "Stripped Sakura Cherry Wood",
+  "block.byg.stripped_cherry_log": "Stripped Cherry Log",
+  "block.byg.stripped_cherry_wood": "Stripped Cherry Wood",
   "block.byg.stripped_cika_log": "Stripped Cika Log",
   "block.byg.stripped_cika_wood": "Stripped Cika Wood",
   "block.byg.stripped_cypress_log": "Stripped Cypress Log",
   "block.byg.stripped_cypress_wood": "Stripped Cypress Wood",
   "block.byg.stripped_ebony_log": "Stripped Ebony Log",
   "block.byg.stripped_ebony_wood": "Stripped Ebony Wood",
+  "block.byg.stripped_embur_hyphae": "Stripped Embur Hyphae",
+  "block.byg.stripped_embur_pedu": "Stripped Embur Pedu",
   "block.byg.stripped_ether_log": "Stripped Ether Log",
   "block.byg.stripped_ether_wood": "Stripped Ether Wood",
   "block.byg.stripped_fir_log": "Stripped Fir Log",
@@ -1100,6 +1155,8 @@
   "block.byg.stripped_holly_wood": "Stripped Holly Wood",
   "block.byg.stripped_jacaranda_log": "Stripped Jacaranda Log",
   "block.byg.stripped_jacaranda_wood": "Stripped Jacaranda Wood",
+  "block.byg.stripped_lament_log": "Stripped Lament Log",
+  "block.byg.stripped_lament_wood": "Stripped Lament Wood",
   "block.byg.stripped_mahogany_log": "Stripped Mahogany Log",
   "block.byg.stripped_mahogany_wood": "Stripped Mahogany Wood",
   "block.byg.stripped_maple_log": "Stripped Maple Log",
@@ -1139,6 +1196,7 @@
   "block.byg.sythian_fence": "Sythian Fence",
   "block.byg.sythian_fence_gate": "Sythian Fence Gate",
   "block.byg.sythian_fungus": "Sythian Fungus",
+  "block.byg.sythian_hanging_sign": "Sythian Hanging Sign",
   "block.byg.sythian_hyphae": "Sythian Hyphae",
   "block.byg.sythian_nylium": "Sythian Nylium",
   "block.byg.sythian_planks": "Sythian Planks",
@@ -1153,13 +1211,14 @@
   "block.byg.sythian_stalk_block": "Sythian Stalk Block",
   "block.byg.sythian_stem": "Sythian Stem",
   "block.byg.sythian_trapdoor": "Sythian Trapdoor",
+  "block.byg.sythian_wall_hanging_sign": "Sythian Wall Hanging Sign",
   "block.byg.sythian_wall_sign": "Sythian Wall Sign",
   "block.byg.sythian_wart_block": "Sythian Wart Block",
   "block.byg.tall_allium": "Tall Allium",
   "block.byg.tall_beach_grass": "Tall Beach Grass",
   "block.byg.tall_crimson_roots": "Tall Crimson Roots",
   "block.byg.tall_cryptic_vent": "Tall Cryptic Vent",
-
+  "block.byg.tall_embur_roots": "Tall Embur Roots",
   "block.byg.tall_ether_grass": "Tall Ether Grass",
   "block.byg.tall_pink_allium": "Tall Pink Allium",
   "block.byg.tall_prairie_grass": "Tall Prairie Grass",
@@ -1171,10 +1230,11 @@
   "block.byg.therium_lamp": "Therium Lamp",
   "block.byg.therium_lantern": "Therium Lantern",
   "block.byg.tiny_lilypads": "Tiny Lilypads",
-
-
-
-
+  "block.byg.torch_ginger": "Torch Ginger",
+  "block.byg.travertine": "Travertine",
+  "block.byg.travertine_slab": "Travertine Slab",
+  "block.byg.travertine_stairs": "Travertine Stairs",
+  "block.byg.travertine_wall": "Travertine Wall",
   "block.byg.vermilion_sculk": "Vermilion Sculk",
   "block.byg.vermilion_sculk_growth": "Vermilion Sculk Growth",
   "block.byg.vermilion_sculk_tendrils": "Vermilion Sculk Tendrils",
@@ -1198,9 +1258,9 @@
   "block.byg.weeping_roots": "Weeping Roots",
   "block.byg.weeping_roots_plant": "Weeping Roots Plant",
   "block.byg.white_anemone": "White Anemone",
-  "block.byg.white_cherry_foliage": "White Sakura Cherry Foliage",
-  "block.byg.white_cherry_leaves": "White Sakura Cherry Leaves",
-  "block.byg.white_cherry_sapling": "White Sakura Cherry Sapling",
+  "block.byg.white_cherry_foliage": "White Cherry Foliage",
+  "block.byg.white_cherry_leaves": "White Cherry Leaves",
+  "block.byg.white_cherry_sapling": "White Cherry Sapling",
   "block.byg.white_chiseled_sandstone": "White Chiseled Sandstone",
   "block.byg.white_cut_sandstone": "White Cut Sandstone",
   "block.byg.white_mangrove_bookshelf": "White Mangrove Bookshelf",
@@ -1209,6 +1269,7 @@
   "block.byg.white_mangrove_door": "White Mangrove Door",
   "block.byg.white_mangrove_fence": "White Mangrove Fence",
   "block.byg.white_mangrove_fence_gate": "White Mangrove Fence Gate",
+  "block.byg.white_mangrove_hanging_sign": "White Mangrove Hanging Sign",
   "block.byg.white_mangrove_leaves": "White Mangrove Leaves",
   "block.byg.white_mangrove_log": "White Mangrove Log",
   "block.byg.white_mangrove_planks": "White Mangrove Planks",
@@ -1218,6 +1279,7 @@
   "block.byg.white_mangrove_slab": "White Mangrove Slab",
   "block.byg.white_mangrove_stairs": "White Mangrove Stairs",
   "block.byg.white_mangrove_trapdoor": "White Mangrove Trapdoor",
+  "block.byg.white_mangrove_wall_hanging_sign": "White Mangrove Wall Hanging Sign",
   "block.byg.white_mangrove_wall_sign": "White Mangrove Wall Sign",
   "block.byg.white_mangrove_wood": "White Mangrove Wood",
   "block.byg.white_mushroom_stem": "White Mushroom Stem",
@@ -1232,6 +1294,7 @@
   "block.byg.willow_door": "Willow Door",
   "block.byg.willow_fence": "Willow Fence",
   "block.byg.willow_fence_gate": "Willow Fence Gate",
+  "block.byg.willow_hanging_sign": "Willow Hanging Sign",
   "block.byg.willow_leaves": "Willow Leaves",
   "block.byg.willow_log": "Willow Log",
   "block.byg.willow_planks": "Willow Planks",
@@ -1241,6 +1304,7 @@
   "block.byg.willow_slab": "Willow Slab",
   "block.byg.willow_stairs": "Willow Stairs",
   "block.byg.willow_trapdoor": "Willow Trapdoor",
+  "block.byg.willow_wall_hanging_sign": "Willow Wall Hanging Sign",
   "block.byg.willow_wall_sign": "Willow Wall Sign",
   "block.byg.willow_wood": "Willow Wood",
   "block.byg.windswept_sand": "Windswept Sand",
@@ -1261,6 +1325,7 @@
   "block.byg.witch_hazel_door": "Witch Hazel Door",
   "block.byg.witch_hazel_fence": "Witch Hazel Fence",
   "block.byg.witch_hazel_fence_gate": "Witch Hazel Fence Gate",
+  "block.byg.witch_hazel_hanging_sign": "Witch Hazel Hanging Sign",
   "block.byg.witch_hazel_leaves": "Witch Hazel Leaves",
   "block.byg.witch_hazel_log": "Witch Hazel Log",
   "block.byg.witch_hazel_planks": "Witch Hazel Planks",
@@ -1270,21 +1335,22 @@
   "block.byg.witch_hazel_slab": "Witch Hazel Slab",
   "block.byg.witch_hazel_stairs": "Witch Hazel Stairs",
   "block.byg.witch_hazel_trapdoor": "Witch Hazel Trapdoor",
+  "block.byg.witch_hazel_wall_hanging_sign": "Witch Hazel Wall Hanging Sign",
   "block.byg.witch_hazel_wall_sign": "Witch Hazel Wall Sign",
   "block.byg.witch_hazel_wood": "Witch Hazel Wood",
-
-
-
-
+  "block.byg.withering_oak_leaves": "Withering Oak Leaves",
+  "block.byg.withering_oak_log": "Withering Oak Log",
+  "block.byg.withering_oak_sapling": "Withering Oak Sapling",
+  "block.byg.withering_oak_wood": "Withering Oak Wood",
   "block.byg.wood_blewit": "Wood Blewit",
   "block.byg.wood_blewit_mushroom_block": "Wood Blewit Mushroom Block",
   "block.byg.yellow_birch_leaves": "Yellow Birch Leaves",
   "block.byg.yellow_birch_sapling": "Yellow Birch Sapling",
   "block.byg.yellow_daffodil": "Yellow Daffodil",
-
-
-
-
+  "block.byg.yellow_nether_brick_slab": "Yellow Nether Brick Slab",
+  "block.byg.yellow_nether_brick_stairs": "Yellow Nether Brick Stairs",
+  "block.byg.yellow_nether_brick_wall": "Yellow Nether Brick Wall",
+  "block.byg.yellow_nether_bricks": "Yellow Nether Bricks",
   "block.byg.yellow_spruce_leaves": "Yellow Spruce Leaves",
   "block.byg.yellow_spruce_sapling": "Yellow Spruce Sapling",
   "block.byg.yellow_tulip": "Yellow Tulip",
@@ -1294,6 +1360,7 @@
   "block.byg.zelkova_door": "Zelkova Door",
   "block.byg.zelkova_fence": "Zelkova Fence",
   "block.byg.zelkova_fence_gate": "Zelkova Fence Gate",
+  "block.byg.zelkova_hanging_sign": "Zelkova Hanging Sign",
   "block.byg.zelkova_leaves": "Zelkova Leaves",
   "block.byg.zelkova_log": "Zelkova Log",
   "block.byg.zelkova_planks": "Zelkova Planks",
@@ -1303,6 +1370,7 @@
   "block.byg.zelkova_slab": "Zelkova Slab",
   "block.byg.zelkova_stairs": "Zelkova Stairs",
   "block.byg.zelkova_trapdoor": "Zelkova Trapdoor",
+  "block.byg.zelkova_wall_hanging_sign": "Zelkova Wall Hanging Sign",
   "block.byg.zelkova_wall_sign": "Zelkova Wall Sign",
   "block.byg.zelkova_wood": "Zelkova Wood",
   "byg.advancements.biomepediagift.description": "Receive a Biomepedia.",
@@ -1377,7 +1445,6 @@
   "entity.byg.pumpkin_warden": "Pumpkin Warden",
   "entity.minecraft.villager.forager": "Forager",
   "filled_map.ancient_sequoia": "Ancient Sequoia Map",
-  "generator.byg.debug_biomes": "Debug Biomes",
   "item.byg.allium_flower_bush": "Allium Flower Bush",
   "item.byg.aloe_vera": "Aloe Vera",
   "item.byg.aloe_vera_juice": "Aloe Vera Juice",
@@ -1407,6 +1474,7 @@
   "item.byg.aspen_door": "Aspen Door",
   "item.byg.aspen_fence": "Aspen Fence",
   "item.byg.aspen_fence_gate": "Aspen Fence Gate",
+  "item.byg.aspen_hanging_sign": "Aspen Hanging Sign",
   "item.byg.aspen_leaves": "Aspen Leaves",
   "item.byg.aspen_log": "Aspen Log",
   "item.byg.aspen_planks": "Aspen Planks",
@@ -1426,6 +1494,7 @@
   "item.byg.baobab_fence": "Baobab Fence",
   "item.byg.baobab_fence_gate": "Baobab Fence Gate",
   "item.byg.baobab_fruit": "Baobab Fruit",
+  "item.byg.baobab_hanging_sign": "Baobab Hanging Sign",
   "item.byg.baobab_leaves": "Baobab Leaves",
   "item.byg.baobab_log": "Baobab Log",
   "item.byg.baobab_planks": "Baobab Planks",
@@ -1459,6 +1528,7 @@
   "item.byg.blue_enchanted_door": "Blue Enchanted Door",
   "item.byg.blue_enchanted_fence": "Blue Enchanted Fence",
   "item.byg.blue_enchanted_fence_gate": "Blue Enchanted Fence Gate",
+  "item.byg.blue_enchanted_hanging_sign": "Blue Enchanted Hanging Sign",
   "item.byg.blue_enchanted_leaves": "Blue Enchanted Leaves",
   "item.byg.blue_enchanted_log": "Blue Enchanted Log",
   "item.byg.blue_enchanted_planks": "Blue Enchanted Planks",
@@ -1469,14 +1539,14 @@
   "item.byg.blue_enchanted_stairs": "Blue Enchanted Stairs",
   "item.byg.blue_enchanted_trapdoor": "Blue Enchanted Trapdoor",
   "item.byg.blue_enchanted_wood": "Blue Enchanted Wood",
-
-
-
-
-
-
-
-
+  "item.byg.blue_nether_brick": "Blue Nether Brick",
+  "item.byg.blue_nether_brick_slab": "Blue Nether Brick Slab",
+  "item.byg.blue_nether_brick_stairs": "Blue Nether Brick Stairs",
+  "item.byg.blue_nether_brick_wall": "Blue Nether Brick Wall",
+  "item.byg.blue_nether_bricks": "Blue Nether Bricks",
+  "item.byg.blue_nether_gold_ore": "Blue Nether Gold Ore",
+  "item.byg.blue_nether_quartz_ore": "Blue Nether Quartz Ore",
+  "item.byg.blue_netherrack": "Blue Netherrack",
   "item.byg.blue_rose_bush": "Blue Rose Bush",
   "item.byg.blue_sage": "Blue Sage",
   "item.byg.blue_sand": "Blue Sand",
@@ -1509,6 +1579,7 @@
   "item.byg.bulbis_door": "Bulbis Door",
   "item.byg.bulbis_fence": "Bulbis Fence",
   "item.byg.bulbis_fence_gate": "Bulbis Fence Gate",
+  "item.byg.bulbis_hanging_sign": "Bulbis Hanging Sign",
   "item.byg.bulbis_oddity": "Bulbis Oddity",
   "item.byg.bulbis_phycelium": "Bulbis Phycelium",
   "item.byg.bulbis_planks": "Bulbis Planks",
@@ -1533,23 +1604,24 @@
   "item.byg.cattail_thatch_carpet": "Cattail Thatch Carpet",
   "item.byg.cattail_thatch_slab": "Cattail Thatch Slab",
   "item.byg.cattail_thatch_stairs": "Cattail Thatch Stairs",
-
-  "item.byg:sakura_cherry_boat": "Sakura Cherry Boat",
-  "item.byg:sakura_cherry_bookshelf": "Sakura Cherry Bookshelf",
-  "item.byg:sakura_cherry_button": "Sakura Cherry Button",
-  "item.byg:sakura_cherry_chest_boat": "Sakura Cherry Chest Boat",
-  "item.byg:sakura_cherry_crafting_table": "Sakura Cherry Crafting Table",
-  "item.byg:sakura_cherry_door": "Sakura Cherry Door",
-  "item.byg:sakura_cherry_fence": "Sakura Cherry Fence",
-  "item.byg:sakura_cherry_fence_gate": "Sakura Cherry Fence Gate",
-  "item.byg:sakura_cherry_log": "Sakura Cherry Log",
-  "item.byg:sakura_cherry_planks": "Sakura Cherry Planks",
-  "item.byg:sakura_cherry_pressure_plate": "Sakura Cherry Pressure Plate",
-  "item.byg:sakura_cherry_sign": "Sakura Cherry Sign",
-  "item.byg:sakura_cherry_slab": "Sakura Cherry Slab",
-  "item.byg:sakura_cherry_stairs": "Sakura Cherry Stairs",
-  "item.byg:sakura_cherry_trapdoor": "Sakura Cherry Trapdoor",
-  "item.byg:sakura_cherry_wood": "Sakura Cherry Wood",
+  "item.byg.chain_plating": "Chain Plating",
+  "item.byg.cherry_boat": "Cherry Boat",
+  "item.byg.cherry_bookshelf": "Cherry Bookshelf",
+  "item.byg.cherry_button": "Cherry Button",
+  "item.byg.cherry_chest_boat": "Cherry Chest Boat",
+  "item.byg.cherry_crafting_table": "Cherry Crafting Table",
+  "item.byg.cherry_door": "Cherry Door",
+  "item.byg.cherry_fence": "Cherry Fence",
+  "item.byg.cherry_fence_gate": "Cherry Fence Gate",
+  "item.byg.cherry_hanging_sign": "Cherry Hanging Sign",
+  "item.byg.cherry_log": "Cherry Log",
+  "item.byg.cherry_planks": "Cherry Planks",
+  "item.byg.cherry_pressure_plate": "Cherry Pressure Plate",
+  "item.byg.cherry_sign": "Cherry Sign",
+  "item.byg.cherry_slab": "Cherry Slab",
+  "item.byg.cherry_stairs": "Cherry Stairs",
+  "item.byg.cherry_trapdoor": "Cherry Trapdoor",
+  "item.byg.cherry_wood": "Cherry Wood",
   "item.byg.chiseled_fungal_imparius": "Chiseled Fungal Imparius",
   "item.byg.chiseled_fungal_imparius_slab": "Chiseled Fungal Imparius Slab",
   "item.byg.chiseled_fungal_imparius_stairs": "Chiseled Fungal Imparius Stairs",
@@ -1562,10 +1634,10 @@
   "item.byg.chiseled_therium_slab": "Chiseled Therium Slab",
   "item.byg.chiseled_therium_stairs": "Chiseled Therium Stairs",
   "item.byg.chiseled_therium_wall": "Chiseled Therium Wall",
-
-
-
-
+  "item.byg.chiseled_travertine": "Chiseled Travertine",
+  "item.byg.chiseled_travertine_slab": "Chiseled Travertine Slab",
+  "item.byg.chiseled_travertine_stairs": "Chiseled Travertine Stairs",
+  "item.byg.chiseled_travertine_wall": "Chiseled Travertine Wall",
   "item.byg.chiseled_windswept_sandstone": "Chiseled Windswept Sandstone",
   "item.byg.chiseled_windswept_sandstone_slab": "Chiseled Windswept Sandstone Slab",
   "item.byg.chiseled_windswept_sandstone_stairs": "Chiseled Windswept Sandstone Stairs",
@@ -1578,6 +1650,7 @@
   "item.byg.cika_door": "Cika Door",
   "item.byg.cika_fence": "Cika Fence",
   "item.byg.cika_fence_gate": "Cika Fence Gate",
+  "item.byg.cika_hanging_sign": "Cika Hanging Sign",
   "item.byg.cika_leaves": "Cika Leaves",
   "item.byg.cika_log": "Cika Log",
   "item.byg.cika_planks": "Cika Planks",
@@ -1600,7 +1673,7 @@
   "item.byg.cracked_red_rock_brick_wall": "Cracked Red Rock Brick Wall",
   "item.byg.cracked_red_rock_bricks": "Cracked Red Rock Bricks",
   "item.byg.cracked_red_sand": "Cracked Red Sand",
-
+  "item.byg.cracked_scoria_stone_bricks": "Cracked Scoria Stone Bricks",
   "item.byg.crimson_berries": "Crimson Berries",
   "item.byg.crimson_berry_pie": "Crimson Berry Pie",
   "item.byg.crocus": "Crocus",
@@ -1631,6 +1704,7 @@
   "item.byg.cypress_door": "Cypress Door",
   "item.byg.cypress_fence": "Cypress Fence",
   "item.byg.cypress_fence_gate": "Cypress Fence Gate",
+  "item.byg.cypress_hanging_sign": "Cypress Hanging Sign",
   "item.byg.cypress_leaves": "Cypress Leaves",
   "item.byg.cypress_log": "Cypress Log",
   "item.byg.cypress_planks": "Cypress Planks",
@@ -1671,6 +1745,7 @@
   "item.byg.ebony_door": "Ebony Door",
   "item.byg.ebony_fence": "Ebony Fence",
   "item.byg.ebony_fence_gate": "Ebony Fence Gate",
+  "item.byg.ebony_hanging_sign": "Ebony Hanging Sign",
   "item.byg.ebony_leaves": "Ebony Leaves",
   "item.byg.ebony_log": "Ebony Log",
   "item.byg.ebony_planks": "Ebony Planks",
@@ -1681,31 +1756,32 @@
   "item.byg.ebony_stairs": "Ebony Stairs",
   "item.byg.ebony_trapdoor": "Ebony Trapdoor",
   "item.byg.ebony_wood": "Ebony Wood",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "item.byg.embur_bookshelf": "Embur Bookshelf",
+  "item.byg.embur_button": "Embur Button",
+  "item.byg.embur_crafting_table": "Embur Crafting Table",
+  "item.byg.embur_door": "Embur Door",
+  "item.byg.embur_fence": "Embur Fence",
+  "item.byg.embur_fence_gate": "Embur Fence Gate",
+  "item.byg.embur_gel_ball": "Embur Gel Ball",
+  "item.byg.embur_gel_block": "Embur Gel Block",
+  "item.byg.embur_gel_branch": "Embur Gel Branch",
+  "item.byg.embur_gel_vines": "Embur Gel Vines",
+  "item.byg.embur_hanging_sign": "Embur Hanging Sign",
+  "item.byg.embur_hyphae": "Embur Hyphae",
+  "item.byg.embur_lily": "Embur Lily",
+  "item.byg.embur_nylium": "Embur Nylium",
+  "item.byg.embur_pedu": "Embur Pedu",
+  "item.byg.embur_planks": "Embur Planks",
+  "item.byg.embur_pressure_plate": "Embur Pressure Plate",
+  "item.byg.embur_roots": "Embur Roots",
+  "item.byg.embur_sign": "Embur Sign",
+  "item.byg.embur_slab": "Embur Slab",
+  "item.byg.embur_sprouts": "Embur Sprouts",
+  "item.byg.embur_stairs": "Embur Stairs",
+  "item.byg.embur_trapdoor": "Embur Trapdoor",
+  "item.byg.embur_wart": "Embur Wart",
+  "item.byg.emeraldite_ore": "Emeraldite Ore",
+  "item.byg.emeraldite_shards": "Emeraldite Shards",
   "item.byg.end_sand": "End Sand",
   "item.byg.ender_lily": "Ender Lily",
   "item.byg.ether_bookshelf": "Ether Bookshelf",
@@ -1718,6 +1794,7 @@
   "item.byg.ether_fence_gate": "Ether Fence Gate",
   "item.byg.ether_foliage": "Ether Foliage",
   "item.byg.ether_grass": "Ether Grass",
+  "item.byg.ether_hanging_sign": "Ether Hanging Sign",
   "item.byg.ether_leaves": "Ether Leaves",
   "item.byg.ether_log": "Ether Log",
   "item.byg.ether_phylium": "Ether Phylium",
@@ -1743,6 +1820,7 @@
   "item.byg.fir_door": "Fir Door",
   "item.byg.fir_fence": "Fir Fence",
   "item.byg.fir_fence_gate": "Fir Fence Gate",
+  "item.byg.fir_hanging_sign": "Fir Hanging Sign",
   "item.byg.fir_leaves": "Fir Leaves",
   "item.byg.fir_log": "Fir Log",
   "item.byg.fir_planks": "Fir Planks",
@@ -1791,6 +1869,7 @@
   "item.byg.green_enchanted_door": "Green Enchanted Door",
   "item.byg.green_enchanted_fence": "Green Enchanted Fence",
   "item.byg.green_enchanted_fence_gate": "Green Enchanted Fence Gate",
+  "item.byg.green_enchanted_hanging_sign": "Green Enchanted Hanging Sign",
   "item.byg.green_enchanted_leaves": "Green Enchanted Leaves",
   "item.byg.green_enchanted_log": "Green Enchanted Log",
   "item.byg.green_enchanted_planks": "Green Enchanted Planks",
@@ -1816,6 +1895,7 @@
   "item.byg.holly_door": "Holly Door",
   "item.byg.holly_fence": "Holly Fence",
   "item.byg.holly_fence_gate": "Holly Fence Gate",
+  "item.byg.holly_hanging_sign": "Holly Hanging Sign",
   "item.byg.holly_leaves": "Holly Leaves",
   "item.byg.holly_log": "Holly Log",
   "item.byg.holly_planks": "Holly Planks",
@@ -1840,6 +1920,7 @@
   "item.byg.imparius_door": "Imparius Door",
   "item.byg.imparius_fence": "Imparius Fence",
   "item.byg.imparius_fence_gate": "Imparius Fence Gate",
+  "item.byg.imparius_hanging_sign": "Imparius Hanging Sign",
   "item.byg.imparius_hyphae": "Imparius Hyphae",
   "item.byg.imparius_mushroom": "Imparius Mushroom",
   "item.byg.imparius_mushroom_block": "Imparius Mushroom Block",
@@ -1870,6 +1951,7 @@
   "item.byg.jacaranda_door": "Jacaranda Door",
   "item.byg.jacaranda_fence": "Jacaranda Fence",
   "item.byg.jacaranda_fence_gate": "Jacaranda Fence Gate",
+  "item.byg.jacaranda_hanging_sign": "Jacaranda Hanging Sign",
   "item.byg.jacaranda_leaves": "Jacaranda Leaves",
   "item.byg.jacaranda_log": "Jacaranda Log",
   "item.byg.jacaranda_planks": "Jacaranda Planks",
@@ -1885,24 +1967,25 @@
   "item.byg.joshua_leaves": "Joshua Leaves",
   "item.byg.joshua_sapling": "Joshua Sapling",
   "item.byg.kovan_flower": "Kovan Flower",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "item.byg.lament_bookshelf": "Lament Bookshelf",
+  "item.byg.lament_button": "Lament Button",
+  "item.byg.lament_crafting_table": "Lament Crafting Table",
+  "item.byg.lament_door": "Lament Door",
+  "item.byg.lament_fence": "Lament Fence",
+  "item.byg.lament_fence_gate": "Lament Fence Gate",
+  "item.byg.lament_hanging_sign": "Lament Hanging Sign",
+  "item.byg.lament_leaves": "Lament Leaves",
+  "item.byg.lament_log": "Lament Log",
+  "item.byg.lament_planks": "Lament Planks",
+  "item.byg.lament_pressure_plate": "Lament Pressure Plate",
+  "item.byg.lament_sapling": "Lament Sapling",
+  "item.byg.lament_sign": "Lament Sign",
+  "item.byg.lament_slab": "Lament Slab",
+  "item.byg.lament_sprouts": "Lament Sprouts",
+  "item.byg.lament_stairs": "Lament Stairs",
+  "item.byg.lament_trapdoor": "Lament Trapdoor",
+  "item.byg.lament_vine": "Lament Vine",
+  "item.byg.lament_wood": "Lament Wood",
   "item.byg.large_subzero_crystal_bud": "Large Subzero Crystal Bud",
   "item.byg.large_therium_crystal_bud": "Large Therium Crystal Bud",
   "item.byg.lazarus_bellflower": "Lazarus Bellflower",
@@ -1923,6 +2006,7 @@
   "item.byg.mahogany_door": "Mahogany Door",
   "item.byg.mahogany_fence": "Mahogany Fence",
   "item.byg.mahogany_fence_gate": "Mahogany Fence Gate",
+  "item.byg.mahogany_hanging_sign": "Mahogany Hanging Sign",
   "item.byg.mahogany_leaves": "Mahogany Leaves",
   "item.byg.mahogany_log": "Mahogany Log",
   "item.byg.mahogany_planks": "Mahogany Planks",
@@ -1943,6 +2027,7 @@
   "item.byg.maple_door": "Maple Door",
   "item.byg.maple_fence": "Maple Fence",
   "item.byg.maple_fence_gate": "Maple Fence Gate",
+  "item.byg.maple_hanging_sign": "Maple Hanging Sign",
   "item.byg.maple_leaves": "Maple Leaves",
   "item.byg.maple_log": "Maple Log",
   "item.byg.maple_planks": "Maple Planks",
@@ -1964,7 +2049,8 @@
   "item.byg.mossy_stone_slab": "Mossy Stone Slab",
   "item.byg.mossy_stone_stairs": "Mossy Stone Stairs",
   "item.byg.mossy_stone_wall": "Mossy Stone Wall",
-
+  "item.byg.mycelium_netherrack": "Mycelium Netherrack",
+  "item.byg.nether_bristle": "Nether Bristle",
   "item.byg.nightshade_berries": "Nightshade Berries",
   "item.byg.nightshade_berry_pie": "Nightshade Berry Pie",
   "item.byg.nightshade_bookshelf": "Nightshade Bookshelf",
@@ -1973,6 +2059,7 @@
   "item.byg.nightshade_door": "Nightshade Door",
   "item.byg.nightshade_fence": "Nightshade Fence",
   "item.byg.nightshade_fence_gate": "Nightshade Fence Gate",
+  "item.byg.nightshade_hanging_sign": "Nightshade Hanging Sign",
   "item.byg.nightshade_leaves": "Nightshade Leaves",
   "item.byg.nightshade_log": "Nightshade Log",
   "item.byg.nightshade_phylium": "Nightshade Phylium",
@@ -2012,6 +2099,7 @@
   "item.byg.palm_door": "Palm Door",
   "item.byg.palm_fence": "Palm Fence",
   "item.byg.palm_fence_gate": "Palm Fence Gate",
+  "item.byg.palm_hanging_sign": "Palm Hanging Sign",
   "item.byg.palm_leaves": "Palm Leaves",
   "item.byg.palm_log": "Palm Log",
   "item.byg.palm_planks": "Palm Planks",
@@ -2048,6 +2136,7 @@
   "item.byg.pine_door": "Pine Door",
   "item.byg.pine_fence": "Pine Fence",
   "item.byg.pine_fence_gate": "Pine Fence Gate",
+  "item.byg.pine_hanging_sign": "Pine Hanging Sign",
   "item.byg.pine_leaves": "Pine Leaves",
   "item.byg.pine_log": "Pine Log",
   "item.byg.pine_planks": "Pine Planks",
@@ -2061,9 +2150,9 @@
   "item.byg.pink_allium": "Pink Allium",
   "item.byg.pink_allium_flower_bush": "Pink Allium Flower Bush",
   "item.byg.pink_anemone": "Pink Anemone",
-  "item.byg.pink_cherry_foliage": "Pink Sakura Cherry Foliage",
-  "item.byg.pink_cherry_leaves": "Pink Sakura Cherry Leaves",
-  "item.byg.pink_cherry_sapling": "Pink Sakura Cherry Sapling",
+  "item.byg.pink_cherry_foliage": "Pink Cherry Foliage",
+  "item.byg.pink_cherry_leaves": "Pink Cherry Leaves",
+  "item.byg.pink_cherry_sapling": "Pink Cherry Sapling",
   "item.byg.pink_chiseled_sandstone": "Pink Chiseled Sandstone",
   "item.byg.pink_cut_sandstone": "Pink Cut Sandstone",
   "item.byg.pink_daffodil": "Pink Daffodil",
@@ -2076,10 +2165,10 @@
   "item.byg.polished_soapstone_slab": "Polished Soapstone Slab",
   "item.byg.polished_soapstone_stairs": "Polished Soapstone Stairs",
   "item.byg.polished_soapstone_wall": "Polished Soapstone Wall",
-
-
-
-
+  "item.byg.polished_travertine": "Polished Travertine",
+  "item.byg.polished_travertine_slab": "Polished Travertine Slab",
+  "item.byg.polished_travertine_stairs": "Polished Travertine Stairs",
+  "item.byg.polished_travertine_wall": "Polished Travertine Wall",
   "item.byg.pollen_block": "Pollen Block",
   "item.byg.pollen_dust": "Pollen Dust",
   "item.byg.prairie_grass": "Prairie Grass",
@@ -2112,6 +2201,7 @@
   "item.byg.rainbow_eucalyptus_door": "Rainbow Eucalyptus Door",
   "item.byg.rainbow_eucalyptus_fence": "Rainbow Eucalyptus Fence",
   "item.byg.rainbow_eucalyptus_fence_gate": "Rainbow Eucalyptus Fence Gate",
+  "item.byg.rainbow_eucalyptus_hanging_sign": "Rainbow Eucalyptus Hanging Sign",
   "item.byg.rainbow_eucalyptus_leaves": "Rainbow Eucalyptus Leaves",
   "item.byg.rainbow_eucalyptus_log": "Rainbow Eucalyptus Log",
   "item.byg.rainbow_eucalyptus_planks": "Rainbow Eucalyptus Planks",
@@ -2149,6 +2239,7 @@
   "item.byg.redwood_door": "Redwood Door",
   "item.byg.redwood_fence": "Redwood Fence",
   "item.byg.redwood_fence_gate": "Redwood Fence Gate",
+  "item.byg.redwood_hanging_sign": "Redwood Hanging Sign",
   "item.byg.redwood_leaves": "Redwood Leaves",
   "item.byg.redwood_log": "Redwood Log",
   "item.byg.redwood_planks": "Redwood Planks",
@@ -2170,30 +2261,30 @@
   "item.byg.rose": "Rose",
   "item.byg.scorched_bush": "Scorched Bush",
   "item.byg.scorched_grass": "Scorched Grass",
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "item.byg.scoria_cobblestone": "Scoria Cobblestone",
+  "item.byg.scoria_cobblestone_slab": "Scoria Cobblestone Slab",
+  "item.byg.scoria_cobblestone_stairs": "Scoria Cobblestone Stairs",
+  "item.byg.scoria_cobblestone_wall": "Scoria Cobblestone Wall",
+  "item.byg.scoria_pillar": "Scoria Pillar",
+  "item.byg.scoria_stone": "Scoria Stone",
+  "item.byg.scoria_stone_slab": "Scoria Stone Slab",
+  "item.byg.scoria_stone_stairs": "Scoria Stone Stairs",
+  "item.byg.scoria_stone_wall": "Scoria Stone Wall",
+  "item.byg.scoria_stonebrick_slab": "Scoria Stonebrick Slab",
+  "item.byg.scoria_stonebrick_stairs": "Scoria Stonebrick Stairs",
+  "item.byg.scoria_stonebrick_wall": "Scoria Stonebrick Wall",
+  "item.byg.scoria_stonebricks": "Scoria Stonebricks",
   "item.byg.shelf_fungi": "Shelf Fungi",
   "item.byg.shiny_chiseled_therium": "Shiny Chiseled Therium",
   "item.byg.shiny_chiseled_therium_slab": "Shiny Chiseled Therium Slab",
   "item.byg.shiny_chiseled_therium_stairs": "Shiny Chiseled Therium Stairs",
   "item.byg.shiny_chiseled_therium_wall": "Shiny Chiseled Therium Wall",
   "item.byg.shrub": "Shrub",
-
-
-
-
-
+  "item.byg.shulkren_fungus": "Shulkren Fungus",
+  "item.byg.shulkren_moss_blanket": "Shulkren Moss Blanket",
+  "item.byg.shulkren_phylium": "Shulkren Phylium",
+  "item.byg.shulkren_vine": "Shulkren Vine",
+  "item.byg.shulkren_wart_block": "Shulkren Wart Block",
   "item.byg.silver_maple_leaves": "Silver Maple Leaves",
   "item.byg.silver_maple_sapling": "Silver Maple Sapling",
   "item.byg.silver_vase_flower": "Silver Vase Flower",
@@ -2205,6 +2296,7 @@
   "item.byg.skyris_door": "Skyris Door",
   "item.byg.skyris_fence": "Skyris Fence",
   "item.byg.skyris_fence_gate": "Skyris Fence Gate",
+  "item.byg.skyris_hanging_sign": "Skyris Hanging Sign",
   "item.byg.skyris_leaves": "Skyris Leaves",
   "item.byg.skyris_log": "Skyris Log",
   "item.byg.skyris_planks": "Skyris Planks",
@@ -2248,16 +2340,16 @@
   "item.byg.stripped_blue_enchanted_wood": "Stripped Blue Enchanted Wood",
   "item.byg.stripped_bulbis_stem": "Stripped Bulbis Stem",
   "item.byg.stripped_bulbis_wood": "Stripped Bulbis Wood",
-  "item.byg.stripped_sakura_cherry_log": "Stripped Sakura Cherry Log",
-  "item.byg.stripped_sakura_cherry_wood": "Stripped Sakura Cherry Wood",
+  "item.byg.stripped_cherry_log": "Stripped Cherry Log",
+  "item.byg.stripped_cherry_wood": "Stripped Cherry Wood",
   "item.byg.stripped_cika_log": "Stripped Cika Log",
   "item.byg.stripped_cika_wood": "Stripped Cika Wood",
   "item.byg.stripped_cypress_log": "Stripped Cypress Log",
   "item.byg.stripped_cypress_wood": "Stripped Cypress Wood",
   "item.byg.stripped_ebony_log": "Stripped Ebony Log",
   "item.byg.stripped_ebony_wood": "Stripped Ebony Wood",
-
-
+  "item.byg.stripped_embur_hyphae": "Stripped Embur Hyphae",
+  "item.byg.stripped_embur_pedu": "Stripped Embur Pedu",
   "item.byg.stripped_ether_log": "Stripped Ether Log",
   "item.byg.stripped_ether_wood": "Stripped Ether Wood",
   "item.byg.stripped_fir_log": "Stripped Fir Log",
@@ -2268,6 +2360,8 @@
   "item.byg.stripped_holly_wood": "Stripped Holly Wood",
   "item.byg.stripped_jacaranda_log": "Stripped Jacaranda Log",
   "item.byg.stripped_jacaranda_wood": "Stripped Jacaranda Wood",
+  "item.byg.stripped_lament_log": "Stripped Lament Log",
+  "item.byg.stripped_lament_wood": "Stripped Lament Wood",
   "item.byg.stripped_mahogany_log": "Stripped Mahogany Log",
   "item.byg.stripped_mahogany_wood": "Stripped Mahogany Wood",
   "item.byg.stripped_maple_log": "Stripped Maple Log",
@@ -2308,6 +2402,7 @@
   "item.byg.sythian_fence": "Sythian Fence",
   "item.byg.sythian_fence_gate": "Sythian Fence Gate",
   "item.byg.sythian_fungus": "Sythian Fungus",
+  "item.byg.sythian_hanging_sign": "Sythian Hanging Sign",
   "item.byg.sythian_hyphae": "Sythian Hyphae",
   "item.byg.sythian_nylium": "Sythian Nylium",
   "item.byg.sythian_planks": "Sythian Planks",
@@ -2325,7 +2420,7 @@
   "item.byg.tall_allium": "Tall Allium",
   "item.byg.tall_crimson_roots": "Tall Crimson Roots",
   "item.byg.tall_cryptic_vent": "Tall Cryptic Vent",
-
+  "item.byg.tall_embur_roots": "Tall Embur Roots",
   "item.byg.tall_ether_grass": "Tall Ether Grass",
   "item.byg.tall_pink_allium": "Tall Pink Allium",
   "item.byg.tall_prairie_grass": "Tall Prairie Grass",
@@ -2338,10 +2433,11 @@
   "item.byg.therium_lamp": "Therium Lamp",
   "item.byg.therium_lantern": "Therium Lantern",
   "item.byg.tiny_lilypads": "Tiny Lilypads",
-
-
-
-
+  "item.byg.torch_ginger": "Torch Ginger",
+  "item.byg.travertine": "Travertine",
+  "item.byg.travertine_slab": "Travertine Slab",
+  "item.byg.travertine_stairs": "Travertine Stairs",
+  "item.byg.travertine_wall": "Travertine Wall",
   "item.byg.vermilion_sculk": "Vermilion Sculk",
   "item.byg.vermilion_sculk_growth": "Vermilion Sculk Growth",
   "item.byg.vermilion_sculk_tendrils": "Vermilion Sculk Tendrils",
@@ -2362,9 +2458,9 @@
   "item.byg.weeping_milkcap_mushroom_block": "Weeping Milkcap Mushroom Block",
   "item.byg.weeping_roots": "Weeping Roots",
   "item.byg.white_anemone": "White Anemone",
-  "item.byg.white_cherry_foliage": "White Sakura Cherry Foliage",
-  "item.byg.white_cherry_leaves": "White Sakura Cherry Leaves",
-  "item.byg.white_cherry_sapling": "White Sakura Cherry Sapling",
+  "item.byg.white_cherry_foliage": "White Cherry Foliage",
+  "item.byg.white_cherry_leaves": "White Cherry Leaves",
+  "item.byg.white_cherry_sapling": "White Cherry Sapling",
   "item.byg.white_chiseled_sandstone": "White Chiseled Sandstone",
   "item.byg.white_cut_sandstone": "White Cut Sandstone",
   "item.byg.white_mangrove_boat": "White Mangrove Boat",
@@ -2375,6 +2471,7 @@
   "item.byg.white_mangrove_door": "White Mangrove Door",
   "item.byg.white_mangrove_fence": "White Mangrove Fence",
   "item.byg.white_mangrove_fence_gate": "White Mangrove Fence Gate",
+  "item.byg.white_mangrove_hanging_sign": "White Mangrove Hanging Sign",
   "item.byg.white_mangrove_leaves": "White Mangrove Leaves",
   "item.byg.white_mangrove_log": "White Mangrove Log",
   "item.byg.white_mangrove_planks": "White Mangrove Planks",
@@ -2401,6 +2498,7 @@
   "item.byg.willow_door": "Willow Door",
   "item.byg.willow_fence": "Willow Fence",
   "item.byg.willow_fence_gate": "Willow Fence Gate",
+  "item.byg.willow_hanging_sign": "Willow Hanging Sign",
   "item.byg.willow_leaves": "Willow Leaves",
   "item.byg.willow_log": "Willow Log",
   "item.byg.willow_planks": "Willow Planks",
@@ -2431,6 +2529,7 @@
   "item.byg.witch_hazel_door": "Witch Hazel Door",
   "item.byg.witch_hazel_fence": "Witch Hazel Fence",
   "item.byg.witch_hazel_fence_gate": "Witch Hazel Fence Gate",
+  "item.byg.witch_hazel_hanging_sign": "Witch Hazel Hanging Sign",
   "item.byg.witch_hazel_leaves": "Witch Hazel Leaves",
   "item.byg.witch_hazel_log": "Witch Hazel Log",
   "item.byg.witch_hazel_planks": "Witch Hazel Planks",
@@ -2441,20 +2540,20 @@
   "item.byg.witch_hazel_stairs": "Witch Hazel Stairs",
   "item.byg.witch_hazel_trapdoor": "Witch Hazel Trapdoor",
   "item.byg.witch_hazel_wood": "Witch Hazel Wood",
-
-
-
-
+  "item.byg.withering_oak_leaves": "Withering Oak Leaves",
+  "item.byg.withering_oak_log": "Withering Oak Log",
+  "item.byg.withering_oak_sapling": "Withering Oak Sapling",
+  "item.byg.withering_oak_wood": "Withering Oak Wood",
   "item.byg.wood_blewit": "Wood Blewit",
   "item.byg.wood_blewit_mushroom_block": "Wood Blewit Mushroom Block",
   "item.byg.yellow_birch_leaves": "Yellow Birch Leaves",
   "item.byg.yellow_birch_sapling": "Yellow Birch Sapling",
   "item.byg.yellow_daffodil": "Yellow Daffodil",
-
-
-
-
-
+  "item.byg.yellow_nether_brick": "Yellow Nether Brick",
+  "item.byg.yellow_nether_brick_slab": "Yellow Nether Brick Slab",
+  "item.byg.yellow_nether_brick_stairs": "Yellow Nether Brick Stairs",
+  "item.byg.yellow_nether_brick_wall": "Yellow Nether Brick Wall",
+  "item.byg.yellow_nether_bricks": "Yellow Nether Bricks",
   "item.byg.yellow_spruce_leaves": "Yellow Spruce Leaves",
   "item.byg.yellow_spruce_sapling": "Yellow Spruce Sapling",
   "item.byg.yellow_tulip": "Yellow Tulip",
@@ -2466,6 +2565,7 @@
   "item.byg.zelkova_door": "Zelkova Door",
   "item.byg.zelkova_fence": "Zelkova Fence",
   "item.byg.zelkova_fence_gate": "Zelkova Fence Gate",
+  "item.byg.zelkova_hanging_sign": "Zelkova Hanging Sign",
   "item.byg.zelkova_leaves": "Zelkova Leaves",
   "item.byg.zelkova_log": "Zelkova Log",
   "item.byg.zelkova_planks": "Zelkova Planks",

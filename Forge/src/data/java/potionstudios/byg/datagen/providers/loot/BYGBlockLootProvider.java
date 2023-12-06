@@ -61,36 +61,21 @@ class BYGBlockLootProvider extends BlockLootSubProvider {
         for (final BYGWoodTypes type : BYGWoodTypes.values()) {
             add(type.bookshelf(), shelf -> createSingleItemTableWithSilkTouch(shelf, Items.BOOK, ConstantValue.exactly(3.0F)));
             dropSelf(type.button());
-            dropSelf(type.craftingTable());
             add(type.door(), this::createDoorTable);
             dropSelf(type.fence());
             dropSelf(type.fenceGate());
-            add(type.leaves(), leaf -> createLeavesDrops(leaf, type.growerItem().get(), NORMAL_LEAVES_SAPLING_CHANCES));
+            add(type.leaves(), leaf -> createLeavesDrops(leaf, type.planks().get(), NORMAL_LEAVES_SAPLING_CHANCES));
             dropSelf(type.log());
             dropSelf(type.wood());
             dropSelf(type.strippedLog());
             dropSelf(type.strippedWood());
             dropSelf(type.planks());
             dropSelf(type.pressurePlate());
-            dropSelf(type.growerItem());
             add(type.slab(), this::createSlabItemTable);
             dropSelf(type.stairs());
             dropSelf(type.trapdoor());
             dropSelf(type.sign());
 
-            if (type.growerItem() != null) {
-                final var growerName = type.growerItem().getId().getPath();
-                final var potted = ForgeRegistries.BLOCKS.getDelegate(BYG.createLocation("potted_" + growerName));
-                potted.ifPresent(blockReference -> {
-                    add(blockReference.value(), LootTable.lootTable()
-                            .withPool(applyExplosionCondition(type.growerItem(), LootPool.lootPool()
-                                    .setRolls(ConstantValue.exactly(1.0F))
-                                    .add(LootItem.lootTableItem(type.growerItem()))))
-                            .withPool(applyExplosionCondition(Items.FLOWER_POT, LootPool.lootPool()
-                                    .setRolls(ConstantValue.exactly(1.0F))
-                                    .add(LootItem.lootTableItem(Items.FLOWER_POT)))));
-                });
-            }
         }
     }
 

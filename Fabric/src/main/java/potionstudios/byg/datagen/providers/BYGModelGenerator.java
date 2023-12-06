@@ -94,7 +94,7 @@ public class BYGModelGenerator extends FabricModelProvider {
                     new ItemFamilyProviderMethod() {
                 @Override
                 public Item getItem() {
-                    return item;
+                    return item.get();
                 }
 
                 @Override
@@ -285,7 +285,7 @@ public class BYGModelGenerator extends FabricModelProvider {
                     executeGeneration(blockVariant, new BlockFamilyProviderMethod() {
                         @Override
                         public Block getBlock() {
-                            return block;
+                            return block.get();
                         }
 
                         @Override
@@ -445,8 +445,8 @@ public class BYGModelGenerator extends FabricModelProvider {
 
         public OrganicProvider hangingSign(BlockFamilyProviderMethod arguments) {
             TextureMapping textureMapping = TextureMapping.particle(this.family.getVariants()
-                    .get(BYGBlockFamily.BlockVariant.STRIPPED_LOG));
-            Block block1 = this.family.getVariants().get(BYGBlockFamily.BlockVariant.WALL_HANGING_SIGN);
+                    .get(BYGBlockFamily.BlockVariant.STRIPPED_LOG).get());
+            Block block1 = this.family.getVariants().get(BYGBlockFamily.BlockVariant.WALL_HANGING_SIGN).get();
             ResourceLocation resourceLocation = ModelTemplates.PARTICLE_ONLY.create(arguments.getBlock(),
                     textureMapping, arguments.getGenerator().modelOutput);
             arguments.getGenerator().blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(arguments.getBlock(), resourceLocation));
@@ -471,17 +471,6 @@ public class BYGModelGenerator extends FabricModelProvider {
             return this;
         }
 
-        public OrganicProvider potted(BlockFamilyProviderMethod arguments) {
-            TextureMapping textureMapping = TextureMapping
-                    .plant(this.family.get(BYGBlockFamily.BlockVariant.GROWER));
-            ResourceLocation resourceLocation = BlockModelGenerators.TintState.NOT_TINTED
-                    .getCrossPot().create(arguments.getBlock(), textureMapping, arguments
-                    .getGenerator().modelOutput);
-            arguments.getGenerator()
-                    .blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(arguments.getBlock(), resourceLocation));
-            return this;
-        }
-
         public OrganicProvider pressurePlate(BlockFamilyProviderMethod arguments) {
             ResourceLocation resourceLocation = ModelTemplates.PRESSURE_PLATE_UP.create(arguments.getBlock(), this.mapping, arguments.getGenerator().modelOutput);
             ResourceLocation resourceLocation1 = ModelTemplates.PRESSURE_PLATE_DOWN.create(arguments.getBlock(), this.mapping, arguments.getGenerator().modelOutput);
@@ -494,7 +483,7 @@ public class BYGModelGenerator extends FabricModelProvider {
             if (this.family == null) {
                 throw new IllegalStateException("Family not defined");
             } else {
-                Block block1 = this.family.getVariants().get(BYGBlockFamily.BlockVariant.WALL_SIGN);
+                Block block1 = this.family.getVariants().get(BYGBlockFamily.BlockVariant.WALL_SIGN).get();
                 ResourceLocation resourceLocation = ModelTemplates.PARTICLE_ONLY.create(arguments.getBlock(), this.mapping, arguments.getGenerator().modelOutput);
                 arguments.getGenerator().blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(arguments.getBlock(), resourceLocation));
                 arguments.getGenerator().blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block1, resourceLocation));
@@ -571,15 +560,13 @@ public class BYGModelGenerator extends FabricModelProvider {
                 case BUSH -> crossBlockNoItem(providerMethod);
                 case BUTTON -> button(providerMethod);
                 case DOOR -> door(providerMethod);
-                case CRAFTING_TABLE -> craftingTable(providerMethod);
                 case FENCE -> fence(providerMethod);
                 case FENCE_GATE -> fenceGate(providerMethod);
                 case FOLIAGE -> carpet(providerMethod);
                 case FRUIT_BLOCK -> fullBlockVariantNoItem(providerMethod);
-                case GRASS, GROWER, SPROUTS -> crossBlock(providerMethod);
+                case GRASS, SPROUTS -> crossBlock(providerMethod);
                 case HANGING_SIGN -> hangingSign(providerMethod);
                 case IMBUED_LOG, LOG, STRIPPED_LOG -> log(providerMethod);
-                case POTTED -> potted(providerMethod);
                 case PRESSURE_PLATE -> pressurePlate(providerMethod);
                 case ROOTS, TALL_GRASS -> doublePlant(providerMethod);
                 case SIGN -> sign(providerMethod);
@@ -616,7 +603,7 @@ public class BYGModelGenerator extends FabricModelProvider {
                             new BlockFamilyProviderMethod() {
                                 @Override
                                 public Block getBlock() {
-                                    return block;
+                                    return block.get();
                                 }
 
                                 @Override

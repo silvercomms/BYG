@@ -10,17 +10,11 @@ import potionstudios.byg.BYGFabric;
 import potionstudios.byg.client.textures.renders.BYGRenderTypes;
 import potionstudios.byg.mixin.access.client.ItemBlockRenderTypeAccess;
 import potionstudios.byg.mixin.client.access.AccessEntityRenderers;
-import potionstudios.byg.network.NetworkUtil;
 
 public class BYGFabricClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        ClientPlayNetworking.registerGlobalReceiver(NetworkUtil.SPAWN_PACKET_ID, (client, listener, buf, responseSender) -> {
-            buf.retain();
-            NetworkUtil.receiveSpawnPacket(client, buf);
-        });
-
         BYGClient.load();
         BYGClient.threadSafeLoad();
         BYGRenderTypes.renderTypes(blockRenderTypeMap -> ItemBlockRenderTypeAccess.byg_getTYPE_BY_BLOCK().putAll(blockRenderTypeMap));

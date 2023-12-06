@@ -43,7 +43,6 @@ public class BYGItemTagsProvider extends ItemTagsProvider {
         }
 
         final var saplingsTag = tag(SAPLINGS.byg(RegistryType.ITEMS));
-        BYGItems.SAPLINGS.stream().map(RegistryObject::get).forEach(saplingsTag::add);
 
         BYGBlockTagsProvider.EXTRA_WOOD_TYPES.forEach(type -> copy(BlockTags.create(type), create(type)));
 
@@ -61,17 +60,6 @@ public class BYGItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
         copy(BYGBlockTags.WOODEN_FENCE_GATES, create(BYGBlockTags.WOODEN_FENCE_GATES.location()));
 
-        copy(STAIRS);
-        copy(SLABS);
-        copy(BUTTONS);
-        copy(SAND);
-        copy(SCAFFOLDING);
-        copy(CAMPFIRES);
-        copy(ICE);
-        copy(ORES);
-
-        copy(BYGBlockTags.MUSHROOMS, bygTag("mushrooms"));
-
         new PredicatedTagProvider<>(BYGItems.PROVIDER)
 //                .add(isBlockMaterial(Material.LEAVES), LEAVES.byg(RegistryType.ITEMS)) // Can't copy this one due to slight differences
                 .run(this::tag);
@@ -80,7 +68,9 @@ public class BYGItemTagsProvider extends ItemTagsProvider {
         tag(SHEARS.byg(RegistryType.ITEMS)).add(Items.SHEARS);
 
         for (BYGTags tag : BYGTags.values()) {
-            DatagenUtils.addBYGTag(this::tag, tag, Registries.ITEM);
+            if (this.builders.containsKey(tag.byg(RegistryType.ITEMS))) {
+                DatagenUtils.addBYGTag(this::tag, tag, Registries.ITEM);
+            }
         }
 
         DatagenUtils.sortTagsAlphabeticallyAndRemoveDuplicateTagEntries(this.builders);

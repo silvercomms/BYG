@@ -13,7 +13,6 @@ import org.jetbrains.annotations.Nullable;
 import potionstudios.byg.BYG;
 import potionstudios.byg.common.BYGTags;
 import potionstudios.byg.common.block.*;
-import potionstudios.byg.common.block.sapling.BYGSaplingBlock;
 import potionstudios.byg.datagen.util.DatagenUtils;
 import potionstudios.byg.datagen.util.PredicatedTagProvider;
 import potionstudios.byg.reg.RegistryObject;
@@ -51,30 +50,24 @@ public class BYGBlockTagsProvider extends BlockTagsProvider {
                 .forInstance(SlabBlock.class, bygTag(SLABS))
                 .forInstance(StairBlock.class, bygTag(STAIRS))
                 .forInstance(ButtonBlock.class, bygTag(BUTTONS))
-                .forInstance(BYGSaplingBlock.class, bygTag(SAPLINGS))
                 .forInstance(BYGMushroomBlock.class, BYGBlockTags.MUSHROOMS)
                 .forInstance(BYGBlockProperties.BYGWartBlock.class, BlockTags.WART_BLOCKS)
                 .forInstance(CampfireBlock.class, bygTag(CAMPFIRES))
                 .forInstance(BYGScaffoldingBlock.class, bygTag(SCAFFOLDING))
                 .checkRegistryName(name -> name.endsWith("_ore"), bygTag(ORES))
 //                .add(isMaterial(shovelMaterials), BlockTags.MINEABLE_WITH_SHOVEL)
-//                .add(isMaterial(Material.LEAVES), bygTag(LEAVES))
-//                .add(isMaterial(Material.SAND), bygTag(SAND))
+                .checkRegistryName(name -> name.endsWith("_leaves"), bygTag(LEAVES))
+                .checkRegistryName(name -> name.endsWith("sand"), bygTag(SAND))
 //                .add(isMaterial(Material.ICE, Material.ICE_SOLID), bygTag(ICE))
                 .run(super::tag);
 
-        tag(BlockTags.MINEABLE_WITH_SHOVEL).add(WAILING_NYLIUM.get());
         tag(SCAFFOLDING.all(RegistryType.BLOCKS)).add(Blocks.SCAFFOLDING);
 
-        tag(BYGBlockTags.GROUND_WHITE_MANGROVE_SAPLING).addTags(BlockTags.SAND).add(Blocks.CLAY, Blocks.MUD);
         tag(BYGBlockTags.GROUND_WILLOW_SAPLING).addTags(BlockTags.SAND).add(Blocks.CLAY, Blocks.MUD);
-        tag(BYGBlockTags.GROUND_CYPRESS_SAPLING).addTags(BlockTags.SAND).add(Blocks.CLAY, Blocks.MUD);
         tag(BYGBlockTags.GROUND_PALO_VERDE_SAPLING).addTags(BlockTags.SAND).addTag(BlockTags.TERRACOTTA);
 
-        tag(BYGBlockTags.END_STONE).add(ETHER_STONE.get(), BULBIS_PHYCELIUM.get(), NIGHTSHADE_PHYLIUM.get(), IMPARIUS_PHYLIUM.get(), IVIS_PHYLIUM.get(), SHULKREN_PHYLIUM.get(), Blocks.END_STONE);
-
         for (TagKey<Block> endPlantTag : BYGBlockTags.END_PLANT_TAGS) {
-            tag(endPlantTag).add(Blocks.END_STONE).addTag(BYGBlockTags.END_STONE)
+            tag(endPlantTag).add(Blocks.END_STONE).addOptionalTag(BYGBlockTags.END_STONE.location())
                     .addOptionalTag(new ResourceLocation("c", "end_stones"))
                     .addOptionalTag(new ResourceLocation("forge", "end_stones"));
         }
@@ -95,20 +88,17 @@ public class BYGBlockTagsProvider extends BlockTagsProvider {
         for (TagKey<Block> desertPlantTag : BYGBlockTags.SAND_PLANT_TAGS) {
             this.tag(desertPlantTag).addTag(BlockTags.SAND);
         }
-        this.tag(BYGBlockTags.GROUND_PALM_SAPLING).addTag(BlockTags.SAND).addTag(BlockTags.DIRT);
         this.tag(BYGBlockTags.GROUND_FAIRY_SLIPPER).addTag(BlockTags.LOGS);
-
-        this.tag(BYGBlockTags.SYTHIAN_STALK_PLANTABLE_ON).add(SYTHIAN_NYLIUM.get(), SYTHIAN_STALK_BLOCK.get(), SYTHIAN_SAPLING.get());
 
         // For now, until we get all wood moved
         final var axeMineable = tag(BlockTags.MINEABLE_WITH_AXE);
         for (BYGWoodTypes type : BYGWoodTypes.values()) {
-            add(axeMineable, type.bookshelf(), type.button(), type.craftingTable(), type.door(), type.trapdoor(), type.planks(), type.fence(), type.fenceGate(), type.log(), type.wood(), type.strippedLog(), type.strippedWood(),
+            add(axeMineable, type.bookshelf(), type.button(), type.door(), type.trapdoor(), type.planks(), type.fence(), type.fenceGate(), type.log(), type.wood(), type.strippedLog(), type.strippedWood(),
                     type.pressurePlate(), type.sign(), type.wallSign(), type.hangingSign(), type.wallHangingSign(), type.slab(), type.stairs());
         }
         add(axeMineable,
-                BORIC_CAMPFIRE, SOUL_SHROOM_BLOCK, SOUL_SHROOM_STEM, GREEN_MUSHROOM_BLOCK, IMBUED_NIGHTSHADE_LOG,
-                WITHERING_OAK_LOG, WITHERING_OAK_WOOD, DEATH_CAP_MUSHROOM_BLOCK, CRYPTIC_CAMPFIRE,
+                BORIC_CAMPFIRE, SOUL_SHROOM_BLOCK, SOUL_SHROOM_STEM, GREEN_MUSHROOM_BLOCK,
+                DEATH_CAP_MUSHROOM_BLOCK, CRYPTIC_CAMPFIRE,
                 PALO_VERDE_LOG, PALO_VERDE_WOOD, STRIPPED_PALO_VERDE_LOG, STRIPPED_PALO_VERDE_WOOD,
                 MILKCAP_MUSHROOM_BLOCK, BROWN_MUSHROOM_STEM, FUNGAL_IMPARIUS_HYPHAE, FUNGAL_IMPARIUS_STEM,
                 BLEWIT_MUSHROOM_BLOCK, WHITE_MUSHROOM_STEM, SYTHIAN_SCAFFOLDING, FORAGERS_TABLE
@@ -149,18 +139,12 @@ public class BYGBlockTagsProvider extends BlockTagsProvider {
         bookselvesTag.add(Blocks.BOOKSHELF);
         tag(BlockTags.FENCE_GATES).addTag(BYGBlockTags.WOODEN_FENCE_GATES);
 
-
-        wood("withering_oak_logs", WITHERING_OAK_LOG, WITHERING_OAK_WOOD);
         wood("palo_verde_logs", PALO_VERDE_LOG, PALO_VERDE_WOOD, STRIPPED_PALO_VERDE_LOG, STRIPPED_PALO_VERDE_WOOD);
-        wood("imbued_blue_enchanted_logs", IMBUED_BLUE_ENCHANTED_LOG);
-        wood("imbued_green_enchanted_log", IMBUED_GREEN_ENCHANTED_LOG);
-        wood("imbued_nightshade_log", IMBUED_NIGHTSHADE_LOG);
-
-
-        tag(BlockTags.OAK_LOGS, WITHERING_OAK_LOG, WITHERING_OAK_WOOD);
 
         for (BYGTags tag : BYGTags.values()) {
-            DatagenUtils.addBYGTag(this::tag, tag, Registries.BLOCK);
+            if (this.builders.containsKey(tag.byg(RegistryType.BLOCKS))) {
+                DatagenUtils.addBYGTag(this::tag, tag, Registries.BLOCK);
+            }
         }
 
         DatagenUtils.sortTagsAlphabeticallyAndRemoveDuplicateTagEntries(this.builders);

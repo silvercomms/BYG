@@ -6,31 +6,9 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
-import potionstudios.byg.common.block.nether.DoubleNetherPlantBlock;
-
-import potionstudios.byg.common.block.nether.glowstonegardens.SoulShroomSporeBlock;
-import potionstudios.byg.common.block.nether.glowstonegardens.SoulShroomSporeEndBlock;
-import potionstudios.byg.common.block.nether.scorched.ScorchedPlantBlock;
-import potionstudios.byg.common.block.nether.sythian.*;
-import potionstudios.byg.common.block.nether.wailing.HangingBonesBlock;
-import potionstudios.byg.common.block.nether.warped.BYGWarpedBushBlock;
-import potionstudios.byg.common.block.nether.warped.BYGWarpedCoralPlantBlock;
-import potionstudios.byg.common.block.nether.warped.BYGWarpedCoralWallFanBlock;
 
 @SuppressWarnings("deprecation")
 public class BYGBlockProperties {
-
-    public static class BYGDoubleNetherPlant extends DoubleNetherPlantBlock {
-        public BYGDoubleNetherPlant() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.ROOTS)
-                    .strength(0.0f)
-                    .noCollission()
-                    .noOcclusion()
-            );
-
-        }
-    }
 
     public static class BYGSnowyPlant extends BYGSnowyPlants {
         public BYGSnowyPlant() {
@@ -118,117 +96,12 @@ public class BYGBlockProperties {
         }
     }
 
-    public static class HangingBones extends HangingBonesBlock {
-        public HangingBones() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.BONE_BLOCK)
-                    .strength(0.0F)
-                    .noCollission()
-            );
-
-        }
-    }
-
-    public static class ScorchedPlant extends ScorchedPlantBlock {
-        public ScorchedPlant() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.GRASS)
-                    .strength(0.0F)
-                    .noCollission()
-                    .noOcclusion()
-            );
-
-        }
-    }
-
-    public static class BYGWarpedCoral extends BYGWarpedCoralPlantBlock {
-        public BYGWarpedCoral() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.WET_GRASS)
-                    .strength(0.0F)
-                    .noCollission()
-                    .noOcclusion()
-                    .lightLevel((state) -> 8)
-            );
-
-        }
-    }
-
-    public static class BYGWarpedWallFanCoral extends BYGWarpedCoralWallFanBlock {
-        public BYGWarpedWallFanCoral() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.WET_GRASS)
-                    .strength(0.0F)
-                    .noCollission()
-                    .noOcclusion()
-                    .dropsLike(BYGBlocks.WARPED_CORAL.get())
-                    .lightLevel((state) -> 8)
-            );
-
-        }
-    }
-
-    public static class BYGWarpedBush extends BYGWarpedBushBlock {
-        public BYGWarpedBush() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.GRASS)
-                    .strength(0.0f)
-                    .noCollission()
-                    .noOcclusion()
-                    .lightLevel((state) -> 8)
-            );
-
-
-        }
-    }
-
-    public static class SythianStalk extends SythianStalkBlock {
-        public SythianStalk() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.BAMBOO)
-                    .strength(0.2f)
-                    .noOcclusion()
-                    .randomTicks()
-                    .lightLevel((state) -> 8).dynamicShape()
-            );
-
-
-        }
-    }
-
     public static class BYGWartBlock extends Block {
         public BYGWartBlock() {
             super(BlockBehaviour.Properties.of()
                     .sound(SoundType.WART_BLOCK)
                     .strength(1.0F)
             );
-        }
-    }
-
-    public static class SythianSapling extends SythianSaplingBlock {
-        public SythianSapling() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.BAMBOO_SAPLING)
-                    .strength(0.0f)
-                    .noCollission()
-                    .noOcclusion()
-                    .randomTicks()
-            );
-
-
-        }
-    }
-
-    public static class SythianPlant extends BYGSythianPlantBlock {
-        public SythianPlant() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.ROOTS)
-                    .strength(0.0f)
-                    .noCollission()
-                    .noOcclusion()
-            );
-
-
         }
     }
 
@@ -321,56 +194,6 @@ public class BYGBlockProperties {
         }
     }
 
-    public static class BYGSoulShroomSporeEnd extends SoulShroomSporeEndBlock {
-        public BYGSoulShroomSporeEnd() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.FUNGUS)
-                    .strength(0.2f)
-                    .randomTicks()
-                    .noCollission()
-                    .lightLevel((state) -> 14)
-
-            );
-
-        }
-    }
-
-    public static class BYGSoulShroomSpore extends SoulShroomSporeBlock {
-        public BYGSoulShroomSpore() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.FUNGUS)
-                    .strength(0.2f)
-                    .randomTicks()
-                    .noCollission()
-            );
-
-        }
-    }
-
-    public static class BYGSythianHangingRootsPlant extends HangingSythanRootsPlantBlock {
-        public BYGSythianHangingRootsPlant() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.WEEPING_VINES)
-                    .strength(0.2f)
-                    .randomTicks()
-                    .noCollission()
-            );
-
-        }
-    }
-
-    public static class BYGSythianHangingRoots extends HangingSythanRootsBlock {
-        public BYGSythianHangingRoots() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.WEEPING_VINES)
-                    .strength(0.2f)
-                    .randomTicks()
-                    .noCollission()
-            );
-
-        }
-    }
-
     public static class LogBlock extends RotatedPillarBlock {
         public LogBlock(Properties properties) {
             super(properties);
@@ -452,6 +275,7 @@ public class BYGBlockProperties {
         }
 
 
+        @Override
         public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
             return adjacentBlockState.getBlock() == this || super.skipRendering(state, adjacentBlockState, side);
         }
@@ -468,6 +292,7 @@ public class BYGBlockProperties {
         }
 
 
+        @Override
         public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
             return adjacentBlockState.getBlock() == this || super.skipRendering(state, adjacentBlockState, side);
         }

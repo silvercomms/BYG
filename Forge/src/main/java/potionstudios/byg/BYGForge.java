@@ -1,5 +1,6 @@
 package potionstudios.byg;
 
+import corgitaco.corgilib.network.ForgeNetworkHandler;
 import corgitaco.corgilib.serialization.jankson.JanksonUtil;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.resources.ResourceKey;
@@ -21,23 +22,11 @@ import potionstudios.byg.client.textures.renders.BYGRenderTypes;
 import potionstudios.byg.common.BYGCompostables;
 import potionstudios.byg.common.BYGFuels;
 import potionstudios.byg.common.BYGStrippables;
-import potionstudios.byg.common.entity.manowar.ManOWar;
-import potionstudios.byg.common.entity.pumpkinwarden.PumpkinWarden;
-import potionstudios.byg.common.world.biome.BYGTerraBlenderRegion;
-import potionstudios.byg.common.world.surfacerules.SurfaceRulesConfig;
-import potionstudios.byg.config.SettingsConfig;
-import potionstudios.byg.config.json.OverworldBiomeConfig;
 import potionstudios.byg.core.BYGRegistry;
 import potionstudios.byg.mixin.access.AxeItemAccess;
-import potionstudios.byg.network.ForgeNetworkHandler;
-import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
 
 import java.util.IdentityHashMap;
 import java.util.Map;
-
-import static potionstudios.byg.common.entity.BYGEntities.MAN_O_WAR;
-import static potionstudios.byg.common.entity.BYGEntities.PUMPKIN_WARDEN;
 
 @Mod(BYG.MOD_ID)
 public class BYGForge {
@@ -75,40 +64,17 @@ public class BYGForge {
     }
 
     public void createTestEntityAttributes(final EntityAttributeCreationEvent event) {
-        event.put(MAN_O_WAR.get(), ManOWar.createAttributes().build());
-        event.put(PUMPKIN_WARDEN.get(), PumpkinWarden.createAttributes().build());
     }
 
     private void commonLoad(FMLCommonSetupEvent event) {
         BYG.commonLoad();
         event.enqueueWork(BYG::threadSafeCommonLoad);
         event.enqueueWork(ForgeNetworkHandler::init);
-        event.enqueueWork(this::registerTerraBlender);
 
         BYGFuels.loadFuels(BYGForgeBusEventsHandler.BURN_TIMES::put);
         Map<Block, Block> strippables = new IdentityHashMap<>(AxeItemAccess.byg_getStrippables());
         BYGStrippables.strippableLogsBYG(strippables::put);
         AxeItemAccess.byg_setStripables(strippables);
-    }
-
-    private void registerTerraBlender() {
-        try {
-            OverworldBiomeConfig config = OverworldBiomeConfig.getConfig();
-            if (config.generateOverworld() && SettingsConfig.getConfig().useBYGWorldGen()) {
-                Map<ResourceKey<LevelStem>, SurfaceRules.RuleSource> surfaceRulesConfig = SurfaceRulesConfig.getConfig();
-                if (surfaceRulesConfig.containsKey(LevelStem.OVERWORLD) && surfaceRulesConfig.get(LevelStem.OVERWORLD) != null) {
-                    SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, BYG.MOD_ID, surfaceRulesConfig.get(LevelStem.OVERWORLD));
-                } else {
-                    throw new IllegalStateException(String.format("Surface rules for \"%s\" are required to load. Fix the config file found at: \"%s\"", LevelStem.OVERWORLD.location(), SurfaceRulesConfig.CONFIG_PATHS.get().get(LevelStem.OVERWORLD)));
-                }
-                config.values().forEach(biomeProviderData -> Regions.register(new BYGTerraBlenderRegion(biomeProviderData.value(), config.globalSwapper())));
-            } else {
-                BYG.logInfo("BYG overworld biomes disabled.");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw e;
-        }
     }
 
     private void loadFinish(FMLLoadCompleteEvent event) {

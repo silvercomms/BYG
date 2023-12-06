@@ -6,11 +6,9 @@
   "mixins": [
     "dev.ModelBuilderMixin",
     "dev.ModelProviderAccess",
-    "dev.TagBuilderAccess",
-    "world.level.storage.loot.MixinLootTableManager"
+    "dev.TagBuilderAccess"
   ],
   "client": [
-    "client.MixinInventoryScreen"
   ],
   "plugin": "potionstudios.byg.mixin.BYGPotionStudiosMixinPlugin",
   "injectors": {

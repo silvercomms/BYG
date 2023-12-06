@@ -142,9 +142,7 @@ public class BYGFlammables {
         flammableBlock(BYGBlocks.POISON_IVY.get(), 15, 100);
         flammableBlock(BYGBlocks.SHRUB.get(), 15, 100);
         flammableBlock(BYGBlocks.JACARANDA_BUSH.get(), 15, 100);
-        flammableBlock(BYGBlocks.FLOWERING_JACARANDA_BUSH.get(), 15, 100);
         flammableBlock(BYGBlocks.INDIGO_JACARANDA_BUSH.get(), 15, 100);
-        flammableBlock(BYGBlocks.FLOWERING_INDIGO_JACARANDA_BUSH.get(), 15, 100);
 
         BYG.logInfo("BYG: Added Flammables!");
     }

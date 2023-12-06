@@ -14,9 +14,5 @@ public class IndigoJacarandaBushBlock extends JacarandaBushBlock implements Bone
 
     @Override
     public void performBonemeal(ServerLevel world, RandomSource rand, BlockPos pos, BlockState state) {
-        JacarandaBushBlock flowering = (JacarandaBushBlock) (this == BYGBlocks.INDIGO_JACARANDA_BUSH.get() ? BYGBlocks.FLOWERING_INDIGO_JACARANDA_BUSH.get() : BYGBlocks.FLOWERING_INDIGO_JACARANDA_BUSH.get());
-        if (flowering.defaultBlockState().canSurvive(world, pos)) {
-            flowering.placeAt(world, pos, 1);
-        }
     }
 }

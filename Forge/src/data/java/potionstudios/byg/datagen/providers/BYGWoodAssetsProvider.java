@@ -44,19 +44,6 @@ public class BYGWoodAssetsProvider extends BlockStateProvider {
                 configureTransform(item.withExistingParent(type.strippedLog().getId().getPath(), strippedLog.getLocation()));
             }
 
-            if (type.boat() != null) {
-                item.withExistingParent(type.boat().getId().getPath(), generatedParent)
-                        .texture("layer0", rl(typeLocItem + "boat"));
-            }
-
-            if (type.chestBoat() != null) {
-                item.withExistingParent(type.chestBoat().getId().getPath(), generatedParent)
-                        .texture("layer0", rl(typeLocItem + "boat"))
-                        .texture("layer1", "byg:item/chest_boat_overlay"
-                        );
-            }
-
-
             final var bookshelf = models().cube(
                     typeName + "/bookshelf",
                     rl(typeLoc + "planks"),
@@ -84,8 +71,6 @@ public class BYGWoodAssetsProvider extends BlockStateProvider {
                     rl(typeLoc + "crafting_table_side"),
                     rl(typeLoc + "crafting_table_front")
             ).texture("particle", typeLoc + "crafting_table_front");
-            configureTransform(item.withExistingParent(type.craftingTable().getId().getPath(), craftingTable.getLocation()));
-            simpleBlock(type.craftingTable().get(), craftingTable);
 
             door(typeName, type.door().get(), rl(typeLoc + "door_bottom"), rl(typeLoc + "door_top"));
             item.withExistingParent(type.door().getId().getPath(), generatedParent)
@@ -158,18 +143,6 @@ public class BYGWoodAssetsProvider extends BlockStateProvider {
                 axisBlock((RotatedPillarBlock) type.strippedWood().get(), strippedWood, strippedWood);
             }
 
-            if (type.growerItem() != null) {
-                final var textureLoc = rl(typeLoc + "grower_item");
-                final var growerItem = models().cross(typeName + "/grower_item", textureLoc);
-                item.withExistingParent(type.growerItem().getId().getPath(), generatedParent)
-                        .texture("layer0", textureLoc);
-                simpleBlock(type.growerItem().get(), growerItem);
-
-                final var pottedBlock = ForgeRegistries.BLOCKS.getValue(BYG.createLocation("potted_" + type.growerItem().getId().getPath()));
-                final var potted = models().withExistingParent(typeLoc + "potted_grower_item", mcLoc("block/flower_pot_cross"))
-                        .texture("plant", growerItem.getLocation());
-                simpleBlock(pottedBlock, potted);
-            }
             final var pressurePlate = models().pressurePlate(typeName + "/pressure_plate", rl(typeLoc + "planks"));
             final var pressurePlateDown = models().pressurePlateDown(typeName + "/pressure_plate_down", rl(typeLoc + "planks"));
             configureTransform(item.withExistingParent(type.pressurePlate().getId().getPath(), pressurePlate.getLocation()));

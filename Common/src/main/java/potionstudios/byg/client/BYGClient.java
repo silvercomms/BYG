@@ -7,12 +7,11 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.SimpleParticleType;
 import potionstudios.byg.BYG;
-import potionstudios.byg.client.gui.screen.HypogealImperiumScreen;
 import potionstudios.byg.client.textures.renders.BYGParticleTypes;
 import potionstudios.byg.common.registration.BYGBlockFamilies;
 import potionstudios.byg.common.registration.BYGBlockFamily;
-import potionstudios.byg.common.container.BYGMenuTypes;
 import potionstudios.byg.common.entity.boat.BYGBoatRenderer;
 import potionstudios.byg.common.particles.FallingLeafParticle;
 import potionstudios.byg.common.particles.TheriumGlint;
@@ -31,15 +30,14 @@ public class BYGClient {
     }
 
     public static void threadSafeLoad() {
-        MenuScreensAccess.byg_register(BYGMenuTypes.HYPOGEAL_CONTAINER.get(), HypogealImperiumScreen::new);
     }
 
     public static void registerParticles(ParticleStrategy strategy) {
         strategy.register(BYGParticleTypes.THERIUM_GLINT.get(), TheriumGlint.Provider::new);
         strategy.register(BYGParticleTypes.WITCH_HAZEL_LEAVES.get(), FallingLeafParticle.Provider::new);
-        strategy.register(BYGBlockFamilies.WHITE_SAKURA_CHERRY.get(BYGBlockFamily.ParticleVariant.LEAVES), FallingLeafParticle.Provider::new);
-        strategy.register(BYGBlockFamilies.SILVER_MAPLE.get(BYGBlockFamily.ParticleVariant.LEAVES), FallingLeafParticle.Provider::new);
-        strategy.register(BYGBlockFamilies.RED_MAPLE.get(BYGBlockFamily.ParticleVariant.LEAVES), FallingLeafParticle.Provider::new);
+        strategy.register((SimpleParticleType) BYGBlockFamilies.WHITE_SAKURA_CHERRY.get(BYGBlockFamily.ParticleVariant.LEAVES), FallingLeafParticle.Provider::new);
+        strategy.register((SimpleParticleType) BYGBlockFamilies.SILVER_MAPLE.get(BYGBlockFamily.ParticleVariant.LEAVES), FallingLeafParticle.Provider::new);
+        strategy.register((SimpleParticleType) BYGBlockFamilies.RED_MAPLE.get(BYGBlockFamily.ParticleVariant.LEAVES), FallingLeafParticle.Provider::new);
     }
 
     public interface ParticleStrategy {

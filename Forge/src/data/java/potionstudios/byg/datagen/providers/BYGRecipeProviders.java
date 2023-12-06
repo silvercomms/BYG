@@ -31,22 +31,6 @@ public class BYGRecipeProviders extends RecipeProvider {
                 .define('P', type.planks().get())
                 .unlockedBy("has_planks", has(type.planks()))
                 .save(consumer, BYG.createLocation(prefix + type + "_door"));
-            if (type.boat() != null) {
-                ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, type.boat().get())
-                        .group("boat")
-                        .pattern("P P")
-                        .pattern("PPP")
-                        .define('P', type.planks().get())
-                        .unlockedBy("has_planks", has(type.planks()))
-                        .save(consumer, BYG.createLocation(prefix + type + "_boat"));
-
-                ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, type.chestBoat().get())
-                        .requires(Blocks.CHEST)
-                        .requires(type.boat().get())
-                        .group("chest_boat")
-                        .unlockedBy("has_boat", has(ItemTags.BOATS))
-                        .save(consumer, BYG.createLocation(prefix + type + "_chest_boat"));
-            }
             ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, type.bookshelf().get())
                 .group("bookshelf")
                 .pattern("PPP")
@@ -61,13 +45,6 @@ public class BYGRecipeProviders extends RecipeProvider {
                 .requires(type.planks().get())
                 .unlockedBy("has_planks", has(type.planks()))
                 .save(consumer, BYG.createLocation(prefix + type + "_button"));
-            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, type.craftingTable())
-                .group("crafting_table")
-                .pattern("PP")
-                .pattern("PP")
-                .define('P', type.planks().get())
-                .unlockedBy("has_planks", has(type.planks()))
-                .save(consumer, BYG.createLocation(prefix + type + "_crafting_table"));
             ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, type.fence(), 3)
                 .group("wooden_fence")
                 .pattern("W#W")

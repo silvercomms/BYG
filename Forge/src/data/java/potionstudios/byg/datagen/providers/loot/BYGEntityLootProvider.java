@@ -27,10 +27,14 @@ public class BYGEntityLootProvider extends EntityLootSubProvider {
     public void generate(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         for (final BYGBlockFamily type : BYGBlockFamilies.woodFamilyMap.values()) {
             for (boolean isChest : new Boolean[]{true, false}) {
+                var item = isChest ? type.get(BYGBlockFamily.ItemVariant.CHEST_BOAT)
+                        : type.get(BYGBlockFamily.ItemVariant.BOAT);
+                if (item == null) {
+                    return;
+                }
                 consumer.accept(BYGBoat.getLootLocation(type, isChest, false), LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(isChest ? type.get(BYGBlockFamily.ItemVariant.CHEST_BOAT)
-                                        : type.get(BYGBlockFamily.ItemVariant.BOAT)))));
+                                .add(LootItem.lootTableItem(item))));
                 var loot = LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(exactly(2))
                                 .add(lootTableItem(Items.STICK)))

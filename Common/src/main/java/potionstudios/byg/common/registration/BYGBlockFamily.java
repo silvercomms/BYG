@@ -1,6 +1,7 @@
 package potionstudios.byg.common.registration;
 
 import net.minecraft.Util;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -48,9 +49,9 @@ public class BYGBlockFamily {
     // There is a separation between additional blocks and items and variants,
     // to make it clear which the "MAIN" block of that variant is supposed to be
     // Ex. Which of the 20 leaf blocks is the main one, the one in variants!
-    private final Map<BlockVariant, Block> variants = new ConcurrentHashMap<>();
-    private final Map<ItemVariant, Item> itemVariants = new ConcurrentHashMap<>();
-    private final Map<ParticleVariant, SimpleParticleType> particleVariants = new ConcurrentHashMap<>();
+    private final Map<BlockVariant, RegistryObject<? extends Block>> variants = new ConcurrentHashMap<>();
+    private final Map<ItemVariant, RegistryObject<? extends Item>> itemVariants = new ConcurrentHashMap<>();
+    private final Map<ParticleVariant, RegistryObject<? extends ParticleType<?>>> particleVariants = new ConcurrentHashMap<>();
     private final Map<BlockVariant, TagKey<Block>> blockTagKeyMap = new ConcurrentHashMap<>();
     private BiConsumer<BiConsumer<Block, Block>, BYGBlockFamily> strippables = null;
     private FeatureFlagSet requiredFeatures;
@@ -69,11 +70,11 @@ public class BYGBlockFamily {
         this.dimension = dimension;
     }
 
-    public Map<BlockVariant, Block> getVariants() {
+    public Map<BlockVariant, RegistryObject<? extends Block>> getVariants() {
         return this.variants;
     }
 
-    public Map<ItemVariant, Item> getItemVariants() {
+    public Map<ItemVariant, RegistryObject<? extends Item>> getItemVariants() {
         return itemVariants;
     }
 
@@ -82,13 +83,19 @@ public class BYGBlockFamily {
     }
 
     public Block get(BlockVariant blockVariant) {
-        return this.variants.get(blockVariant);
+        var obj = this.variants.get(blockVariant);
+        return obj == null ? null : obj.get();
     }
 
-    public Item get(ItemVariant itemVariant) { return this.itemVariants.get(itemVariant); }
+    public Item get(ItemVariant itemVariant) {
+        var obj = this.itemVariants.get(itemVariant);
+        return obj == null ? null : obj.get();
+    }
 
-    public SimpleParticleType get(ParticleVariant variant) {
-        return this.particleVariants.get(variant);
+    public RegistryObject<? extends Item> getSafe(ItemVariant itemVariant) { return this.itemVariants.get(itemVariant); }
+
+    public ParticleType<?> get(ParticleVariant variant) {
+        return this.particleVariants.get(variant).get();
     }
 
     public TagKey<Block> getTag(BlockVariant blockVariant) {
@@ -147,8 +154,29 @@ public class BYGBlockFamily {
                 block = BYGBlocks.createStoneSpreadable(() -> blockToSpreadToo.apply(this), color, id);
             }
         }
-        this.variants.put(BlockVariant.SPREAD_TO, blockToSpreadToo.apply(this));
-        this.variants.put(BlockVariant.SPREADABLE, block.get());
+        var spreadTo = blockToSpreadToo.apply(this);
+        this.variants.put(BlockVariant.SPREAD_TO, new BlockRegistryObject<Block>() {
+            @Override
+            public ResourceKey<Block> getResourceKey() {
+                return BuiltInRegistries.BLOCK.getResourceKey(spreadTo).orElseThrow();
+            }
+
+            @Override
+            public ResourceLocation getId() {
+                return BuiltInRegistries.BLOCK.getKey(spreadTo);
+            }
+
+            @Override
+            public Block get() {
+                return spreadTo;
+            }
+
+            @Override
+            public Holder<Block> asHolder() {
+                return BuiltInRegistries.BLOCK.wrapAsHolder(spreadTo);
+            }
+        });
+        this.variants.put(BlockVariant.SPREADABLE, block);
         BYGItems.createItem(block);
         return this;
     }
@@ -164,8 +192,8 @@ public class BYGBlockFamily {
             this.family = new BYGBlockFamily(baseName, dimension);
             if(hasPlanks) {
                 RegistryObject<? extends Block> planks = BYGBlocks.createPlanks(baseName + "_planks");
-                this.family.variants.put(BlockVariant.PLANKS, planks.get());
-                this.family.variants.put(BlockVariant.BASE_BLOCK, planks.get());
+                this.family.variants.put(BlockVariant.PLANKS, planks);
+                this.family.variants.put(BlockVariant.BASE_BLOCK, planks);
                 BYGItems.createItem(planks);
             }
             this.baseName = baseName;
@@ -180,7 +208,7 @@ public class BYGBlockFamily {
         public OrganicBuilder bookshelf() {
             RegistryObject<? extends Block> block = BYGBlocks.createBookshelf(baseName + "_bookshelf");
             this.family.variants.put(BlockVariant.BOOKSHELF,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -190,10 +218,10 @@ public class BYGBlockFamily {
                                    Function<Block, Item> bushItem) {
             RegistryObject<? extends Block> block = supplier.get();
             this.family.variants.put(BlockVariant.BUSH,
-                    block.get());
+                    block);
             Item unregisteredItem = bushItem.apply(block.get());
             if(unregisteredItem != null) {
-                Item fruit = BYGItems.createItem(() -> unregisteredItem, fruitName).get();
+                var fruit = BYGItems.createItem(() -> unregisteredItem, fruitName);
                 this.family.itemVariants.put(ItemVariant.FRUIT, fruit);
             }
             return this;
@@ -202,15 +230,7 @@ public class BYGBlockFamily {
         public OrganicBuilder button() {
             RegistryObject<? extends Block> block = BYGBlocks.createWoodButton(baseName + "_button", woodType.setType());
             this.family.variants.put(BlockVariant.BUTTON,
-                    block.get());
-            BYGItems.createItem(block);
-            return this;
-        }
-
-        public OrganicBuilder craftingTable() {
-            RegistryObject<? extends Block> block = BYGBlocks.createCraftingTable(baseName + "_crafting_table");
-            this.family.variants.put(BlockVariant.CRAFTING_TABLE,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -218,7 +238,7 @@ public class BYGBlockFamily {
         public OrganicBuilder door() {
             RegistryObject<? extends Block> block = BYGBlocks.createDoor(baseName + "_door", woodType.setType());
             this.family.variants.put(BlockVariant.DOOR,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -226,7 +246,7 @@ public class BYGBlockFamily {
         public OrganicBuilder fence() {
             RegistryObject<? extends Block> block = BYGBlocks.createFence(baseName + "_fence");
             this.family.variants.put(BlockVariant.FENCE,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -234,7 +254,7 @@ public class BYGBlockFamily {
         public OrganicBuilder fenceGate() {
             RegistryObject<? extends Block> block = BYGBlocks.createFenceGate(baseName + "_fence_gate", woodType);
             this.family.variants.put(BlockVariant.FENCE_GATE,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -243,7 +263,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block = BYGBlocks.createBlock(() ->
                     new FlatVegetationBlock(BlockBehaviour.Properties.of().noCollission()
                             .instabreak().sound(SoundType.GRASS)), baseName + "_foliage");
-            family.variants.put(BlockVariant.FOLIAGE, block.get());
+            family.variants.put(BlockVariant.FOLIAGE, block);
             BYGItems.createItem(block);
             return this;
         }
@@ -254,7 +274,7 @@ public class BYGBlockFamily {
             }
             RegistryObject<? extends Block> registryObject = leavesFactory.apply(baseName + "_leaves", family);
             this.family.variants.put(BlockVariant.FLOWERING_LEAVES,
-                    registryObject.get()
+                    registryObject
             );
             BYGItems.createItem(registryObject);
             return this;
@@ -265,11 +285,11 @@ public class BYGBlockFamily {
         public OrganicBuilder fruit(String fruitBlockName, String fruitItemName, String leafName, Function<Block, Item> itemGenerator) {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createFruitBlock(fruitBlockName, family);
-            family.variants.put(BlockVariant.FRUIT_BLOCK, block.get());
+            family.variants.put(BlockVariant.FRUIT_BLOCK, block);
             if(itemGenerator != null) {
                 RegistryObject<? extends Item> item =
                         BYGItems.createItem(() -> itemGenerator.apply(block.get()), fruitItemName);
-                family.itemVariants.put(ItemVariant.FRUIT, item.get());
+                family.itemVariants.put(ItemVariant.FRUIT, item);
             }
             fruitLeaves((s, family) -> BYGBlocks.createFruitLeaves(MapColor.COLOR_GREEN,
                     () -> block.get().defaultBlockState().setValue(FruitBlock.AGE, 0),
@@ -279,10 +299,10 @@ public class BYGBlockFamily {
 
         public OrganicBuilder fruitBlock(String fruitBlockName, Supplier<Block> blockGenerator, String fruitItemName, Function<Block, Item> itemGenerator) {
             RegistryObject<? extends Block> block = BYGBlocks.createBlock(blockGenerator, fruitBlockName);
-            family.variants.put(BlockVariant.FRUIT_BLOCK, block.get());
+            family.variants.put(BlockVariant.FRUIT_BLOCK, block);
             RegistryObject<? extends Item> item =
                     BYGItems.createItem(() -> itemGenerator.apply(block.get()), fruitItemName);
-            family.itemVariants.put(ItemVariant.FRUIT, item.get());
+            family.itemVariants.put(ItemVariant.FRUIT, item);
             return this;
         }
 
@@ -292,7 +312,7 @@ public class BYGBlockFamily {
             }
             RegistryObject<? extends Block> registryObject = leavesFactory.apply(name, family);
             this.family.variants.put(BlockVariant.FRUIT_LEAVES,
-                    registryObject.get()
+                    registryObject
             );
             BYGItems.createItem(registryObject);
             return this;
@@ -300,26 +320,8 @@ public class BYGBlockFamily {
 
         public OrganicBuilder grass(@NotNull Supplier<? extends RegistryObject<? extends Block>> supplier) {
             RegistryObject<? extends Block> registryObject = supplier.get();
-            this.family.variants.put(BlockVariant.GRASS, registryObject.get());
+            this.family.variants.put(BlockVariant.GRASS, registryObject);
             BYGItems.createItem(registryObject);
-            return this;
-        }
-
-        public OrganicBuilder growerItem(GrowerTypes growerType, String itemName,
-                                         Consumer<TagKey<Block>> additionalTags) {
-            TagKey<Block> tagKey = createTag(BYG.createLocation("may_place_on/" + itemName));
-            additionalTags.accept(tagKey);
-            this.family.blockTagKeyMap.put(BlockVariant.GROWER, tagKey);
-            BlockRegistryObject<Block> growerBlock =
-                    switch (growerType) {
-                        case NETHER_PLANT -> BYGBlocks.createFungus(tagKey, itemName);
-                        case MUSHROOM -> BYGBlocks.createMushroom(tagKey, itemName);
-                        default -> BYGBlocks.createSapling(tagKey, itemName);
-                    };
-            this.family.variants.put(BlockVariant.GROWER, growerBlock.get());
-            this.family.variants.put(BlockVariant.POTTED,
-                    BYGBlocks.FLOWER_POT_BLOCKS.get(growerBlock.getId()).get());
-            BYGItems.createGrowerItem(growerBlock, growerType == GrowerTypes.PLANT);
             return this;
         }
 
@@ -335,9 +337,9 @@ public class BYGBlockFamily {
                             woodType),
                     baseName + "_wall_hanging_sign");
             this.family.variants.put(BlockVariant.HANGING_SIGN,
-                    sign.get());
+                    sign);
             this.family.variants.put(BlockVariant.WALL_HANGING_SIGN,
-                    wallSign.get());
+                    wallSign);
             BYGItems.createHangingSign(baseName + "_hanging_sign", sign, wallSign);
             return this;
         }
@@ -347,7 +349,7 @@ public class BYGBlockFamily {
                     BYGBlocks.createLog("imbued_" + baseName + "_log") :
                     BYGBlocks.createBlock(BYGBlockProperties.BYGNetherLog::new, "imbued_" + baseName + "_stem");
             this.family.variants.put(BlockVariant.IMBUED_LOG,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -358,7 +360,7 @@ public class BYGBlockFamily {
             }
             RegistryObject<? extends Block> registryObject = leavesFactory.apply(baseName + "_leaves", family);
             this.family.variants.put(BlockVariant.LEAVES,
-                    registryObject.get()
+                    registryObject
                     );
             BYGItems.createItem(registryObject);
             return this;
@@ -372,7 +374,7 @@ public class BYGBlockFamily {
                     BYGBlocks.createLeaves(color.get(), baseName + "_leaves") :
                     BYGBlocks.createBlock(BYGBlockProperties.BYGWartBlock::new, baseName + "_wart_block");
             this.family.variants.put(BlockVariant.LEAVES,
-                        registryObject.get()
+                        registryObject
                     );
             BYGItems.createItem(registryObject);
             return this;
@@ -380,7 +382,7 @@ public class BYGBlockFamily {
 
         public OrganicBuilder leafParticles(Supplier<SimpleParticleType> particle, String id) {
             RegistryObject<? extends ParticleType<?>> particles = BYGParticleTypes.createSimpleParticle(particle, id);
-            family.particleVariants.put(ParticleVariant.LEAVES, (SimpleParticleType) particles.get());
+            family.particleVariants.put(ParticleVariant.LEAVES, particles);
             return this;
         }
 
@@ -389,7 +391,7 @@ public class BYGBlockFamily {
                     BYGBlocks.createLog(baseName + "_log")
                     : BYGBlocks.createBlock(BYGBlockProperties.BYGNetherLog::new, baseName + "_stem");
             this.family.variants.put(BlockVariant.LOG,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -397,7 +399,7 @@ public class BYGBlockFamily {
         public OrganicBuilder pressurePlate() {
             RegistryObject<? extends Block> block = BYGBlocks.createWoodPressurePlate(baseName + "_pressure_plate", woodType.setType());
             this.family.variants.put(BlockVariant.PRESSURE_PLATE,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -405,13 +407,13 @@ public class BYGBlockFamily {
         public OrganicBuilder processedFood(String itemName, Supplier<? extends Item> supplier) {
             RegistryObject<? extends Item> item = BYGItems.createItem(supplier, itemName);
             this.family.itemVariants.put(ItemVariant.PROCESSED_FOOD,
-                    item.get());
+                    item);
             return this;
         }
 
         public OrganicBuilder roots(@NotNull Supplier<? extends RegistryObject<? extends Block>> supplier) {
             RegistryObject<? extends Block> registryObject = supplier.get();
-            this.family.variants.put(BlockVariant.ROOTS, registryObject.get());
+            this.family.variants.put(BlockVariant.ROOTS, registryObject);
             BYGItems.createItem(registryObject);
             return this;
         }
@@ -424,16 +426,16 @@ public class BYGBlockFamily {
                             BlockBehaviour.Properties.copy(Blocks.OAK_SIGN).mapColor(color.get()),
                             woodType), baseName + "_wall_sign");
             this.family.variants.put(BlockVariant.SIGN,
-                    signBlock.get());
+                    signBlock);
             this.family.variants.put(BlockVariant.WALL_SIGN,
-                    wallSign.get());
+                    wallSign);
             BYGItems.createSign(baseName + "_sign", signBlock, wallSign);
             return this;
         }
 
         public OrganicBuilder soil() {
             RegistryObject<? extends Block> soil = BYGBlocks.createDirt(baseName + "_soil");
-            this.family.variants.put(BlockVariant.SOIL, soil.get());
+            this.family.variants.put(BlockVariant.SOIL, soil);
             BYGItems.createItem(soil);
             return this;
         }
@@ -441,7 +443,7 @@ public class BYGBlockFamily {
         public OrganicBuilder slab() {
             RegistryObject<? extends Block> block = BYGBlocks.createWoodSlab(baseName + "_slab");
             this.family.variants.put(BlockVariant.SLAB,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -449,7 +451,7 @@ public class BYGBlockFamily {
         public OrganicBuilder stairs() {
             RegistryObject<? extends Block> block = BYGBlocks.createWoodStairs(baseName + "_stairs");
             this.family.variants.put(BlockVariant.STAIRS,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -459,7 +461,7 @@ public class BYGBlockFamily {
                     BYGBlocks.createLog("stripped_" + baseName + "_log")
                     : BYGBlocks.createBlock(BYGBlockProperties.BYGNetherLog::new, "stripped_" + baseName + "_stem");
             this.family.variants.put(BlockVariant.STRIPPED_LOG,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -474,21 +476,21 @@ public class BYGBlockFamily {
                     BYGBlocks.createLog("stripped_" + baseName + "_wood")
                     : BYGBlocks.createBlock(BYGBlockProperties.BYGNetherLog::new, "stripped_" + baseName + "_hyphae");
             this.family.variants.put(BlockVariant.STRIPPED_WOOD,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
 
         public OrganicBuilder sprouts(@NotNull Supplier<? extends RegistryObject<? extends Block>> supplier) {
             RegistryObject<? extends Block> registryObject = supplier.get();
-            this.family.variants.put(BlockVariant.SPROUTS, registryObject.get());
+            this.family.variants.put(BlockVariant.SPROUTS, registryObject);
             BYGItems.createItem(registryObject);
             return this;
         }
 
         public OrganicBuilder tallGrass(@NotNull Supplier<? extends RegistryObject<? extends Block>> supplier) {
             RegistryObject<? extends Block> registryObject = supplier.get();
-            this.family.variants.put(BlockVariant.TALL_GRASS, registryObject.get());
+            this.family.variants.put(BlockVariant.TALL_GRASS, registryObject);
             BYGItems.createItem(registryObject);
             return this;
         }
@@ -496,14 +498,14 @@ public class BYGBlockFamily {
         public OrganicBuilder trapdoor() {
             RegistryObject<? extends Block> block = BYGBlocks.createTrapDoor(baseName + "_trapdoor", woodType.setType());
             this.family.variants.put(BlockVariant.TRAPDOOR,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
 
         public OrganicBuilder vine(Supplier<Block> supplier, String id) {
             RegistryObject<? extends Block> block = BYGBlocks.createBlock(supplier, id);
-            family.variants.put(BlockVariant.VINE, block.get());
+            family.variants.put(BlockVariant.VINE, block);
             BYGItems.createItem(block);
             return this;
         }
@@ -513,7 +515,7 @@ public class BYGBlockFamily {
                     BYGBlocks.createLog(baseName + "_wood") :
                     BYGBlocks.createBlock(BYGBlockProperties.BYGNetherLog::new, baseName + "_hyphae");
             this.family.variants.put(BlockVariant.WOOD,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -522,7 +524,7 @@ public class BYGBlockFamily {
             RegistryObject<Item> item = BYGItems.createItem(() ->
                     new BYGBoatItem(false, family,
                             new Item.Properties().stacksTo(1)), baseName + "_boat");
-            this.family.itemVariants.put(ItemVariant.BOAT, item.get());
+            this.family.itemVariants.put(ItemVariant.BOAT, item);
             return this;
         }
 
@@ -530,7 +532,7 @@ public class BYGBlockFamily {
             RegistryObject<Item> item = BYGItems.createItem(() ->
                     new BYGBoatItem(true, family,
                             new Item.Properties().stacksTo(1)), baseName + "_chest_boat");
-            this.family.itemVariants.put(ItemVariant.CHEST_BOAT, item.get());
+            this.family.itemVariants.put(ItemVariant.CHEST_BOAT, item);
             return this;
         }
 
@@ -547,7 +549,7 @@ public class BYGBlockFamily {
         public InorganicBuilder(String baseName, BlockSetType blockSetType, RegistryObject<? extends Block> block,
                                 ResourceKey<DimensionType> dimension) {
             this.family = new BYGBlockFamily(baseName, dimension);
-            this.family.variants.put(BlockVariant.BASE_BLOCK, block.get());
+            this.family.variants.put(BlockVariant.BASE_BLOCK, block);
             BYGItems.createItem(block);
             this.baseName = baseName;
             this.blockSetType = blockSetType;
@@ -560,7 +562,7 @@ public class BYGBlockFamily {
         public InorganicBuilder button() {
             RegistryObject<? extends Block> block = BYGBlocks.createWoodButton(baseName + "_button", blockSetType);
             this.family.variants.put(BlockVariant.BUTTON,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -569,7 +571,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new Block(properties), "carved_" + baseName );
             this.family.variants.put(BlockVariant.CARVED,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -590,7 +592,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new Block(properties), "chiseled_" + baseName + "_block");
             this.family.variants.put(BlockVariant.CHISELED,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -611,7 +613,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new Block(properties), "cobbled_" + baseName);
             this.family.variants.put(BlockVariant.COBBLED,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -632,7 +634,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new Block(properties), "cracked_" + baseName + "_block");
             this.family.variants.put(BlockVariant.CRACKED,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -653,7 +655,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new Block(properties), "cut_" + baseName + "_block");
             this.family.variants.put(BlockVariant.CUT,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -673,7 +675,7 @@ public class BYGBlockFamily {
         public InorganicBuilder door() {
             RegistryObject<? extends Block> block = BYGBlocks.createDoor(baseName + "_door", blockSetType);
             this.family.variants.put(BlockVariant.DOOR,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -681,7 +683,7 @@ public class BYGBlockFamily {
         public InorganicBuilder fence() {
             RegistryObject<? extends Block> block = BYGBlocks.createFence(baseName + "_fence");
             this.family.variants.put(BlockVariant.FENCE,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -689,7 +691,7 @@ public class BYGBlockFamily {
         public InorganicBuilder growth(Supplier<RegistryObject<? extends Block>> supplier) {
             RegistryObject<? extends Block> block = supplier.get();
             this.family.variants.put(BlockVariant.GROWTH,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -697,7 +699,7 @@ public class BYGBlockFamily {
         public InorganicBuilder slab() {
             RegistryObject<? extends Block> block = BYGBlocks.createStoneSlab(baseName + "_slab");
             this.family.variants.put(BlockVariant.SLAB,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -706,7 +708,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block = BYGBlocks.createBlock(BYGBlockProperties.BYGStoneStairs::new,
                     baseName + "_stairs");
             this.family.variants.put(BlockVariant.STAIRS,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -715,7 +717,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createWoodPressurePlate(baseName + "_pressure_plate", blockSetType);
             this.family.variants.put(BlockVariant.PRESSURE_PLATE,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -724,7 +726,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new Block(properties), "polished_" + baseName + "_block");
             this.family.variants.put(BlockVariant.POLISHED,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -744,7 +746,7 @@ public class BYGBlockFamily {
         public InorganicBuilder trapdoor() {
             RegistryObject<? extends Block> block = BYGBlocks.createTrapDoor(baseName + "_trapdoor", blockSetType);
             this.family.variants.put(BlockVariant.TRAPDOOR,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -756,7 +758,7 @@ public class BYGBlockFamily {
                                     .get(BYG.createLocation(id.replace("_stairs", "block"))).defaultBlockState(),
                             properties), id);
             this.family.variants.put(blockVariant,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -765,7 +767,7 @@ public class BYGBlockFamily {
             String id = prefix + baseName + "_slab";
             RegistryObject<? extends Block> block = BYGBlocks.createBlock(() -> new SlabBlock(properties), id);
             this.family.variants.put(blockVariant,
-                    block.get()
+                    block
             );
             BYGItems.createItem(block);
             return this;
@@ -776,7 +778,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new WallBlock(properties), id);
             this.family.variants.put(blockVariant,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -784,7 +786,7 @@ public class BYGBlockFamily {
         public InorganicBuilder tendrils(Supplier<RegistryObject<? extends Block>> supplier) {
             RegistryObject<? extends Block> block = supplier.get();
             this.family.variants.put(BlockVariant.TENDRILS,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -793,7 +795,7 @@ public class BYGBlockFamily {
             RegistryObject<? extends Block> block =
                     BYGBlocks.createBlock(() -> new WallBlock(properties), baseName + "_wall");
             this.family.variants.put(BlockVariant.WALL,
-                    block.get());
+                    block);
             BYGItems.createItem(block);
             return this;
         }
@@ -881,7 +883,6 @@ public class BYGBlockFamily {
         CRACKED_STAIRS("cracked_stairs"),
         CRACKED_SLAB("cracked_slab"),
         CRACKED_WALL("cracked_wall"),
-        CRAFTING_TABLE("crafting_table"),
         CUT("cut"),
         CUT_STAIRS("cut_stairs"),
         CUT_SLAB("cut_slab"),
@@ -895,7 +896,6 @@ public class BYGBlockFamily {
         FRUIT_BLOCK("fruit_block"),
         FRUIT_LEAVES("fruit_leaves"),
         GRASS("grass"),
-        GROWER("grower"),
         GROWTH("growth"),
         IMBUED_LOG("imbued"),
         LEAVES("leaves"),
@@ -906,7 +906,6 @@ public class BYGBlockFamily {
         POLISHED_STAIRS("polished_stairs"),
         POLISHED_SLAB("polished_slab"),
         POLISHED_WALL("polished_wall"),
-        POTTED("potted"),
         ROOTS("roots"),
         SIGN("sign"),
         SLAB("slab"),

@@ -12,7 +12,6 @@ import net.minecraft.util.random.WeightedEntry;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.biome.Biome;
 import potionstudios.byg.BYG;
-import potionstudios.byg.common.world.biome.LayersBiomeData;
 import potionstudios.byg.mixin.access.WeightedEntryWrapperAccess;
 import potionstudios.byg.mixin.access.WeightedListAccess;
 
@@ -114,25 +113,6 @@ public class BYGUtil {
             }
         }
         return combinedBuilder.build();
-    }
-
-    @SuppressWarnings("unchecked")
-    public static List<Holder<Biome>> createBiomesFromBiomeData(Registry<Biome> biomeRegistry, LayersBiomeData... layersBiomeDatas) {
-        List<Holder<Biome>> biomes = new ArrayList<>();
-        for (LayersBiomeData layersBiomeData : layersBiomeDatas) {
-            ImmutableList<WeightedEntry.Wrapper<ResourceKey<Biome>>> items = ((WeightedListAccess<WeightedEntry.Wrapper<ResourceKey<Biome>>>) layersBiomeData.biomeWeights()).byg_getItems();
-
-            for (WeightedEntry.Wrapper<ResourceKey<Biome>> key : items) {
-                ResourceKey<Biome> resourceKey = key.getData();
-                Optional<Holder.Reference<Biome>> biome = biomeRegistry.getHolder(resourceKey);
-                if (biome.isPresent()) {
-                    biomes.add(biome.get());
-                } else {
-                    BYG.logInfo("\"" + resourceKey.location() + "\" is not a value in the biome registry at this point, ignore this warning if the data pack containing this biome is not yet added during world creation.");
-                }
-            }
-        }
-        return biomes;
     }
 
     public static String dumpCollection(Collection<String> collection) {

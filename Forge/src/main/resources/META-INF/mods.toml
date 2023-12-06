@@ -30,13 +30,6 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.byg]]
-modId = "terrablender"
-mandatory = true
-versionRange = "[3.0.0.163,)"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.byg]]
 modId = "corgilib"
 mandatory = true
 versionRange = "[4.0.0.0,)"

@@ -95,6 +95,7 @@ public class BYGBoatRenderer extends EntityRenderer<BYGBoat> {
     /**
      * Returns the location of an entity's texture.
      */
+    @Override
     public ResourceLocation getTextureLocation(BYGBoat boat) {
         return this.boatResources.get(boat.getBYGBoatType()).getFirst();
     }

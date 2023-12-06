@@ -20,8 +20,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import potionstudios.byg.common.BYGHoeables;
-import potionstudios.byg.common.entity.npc.BYGVillagerTrades;
-import potionstudios.byg.common.entity.npc.TradesConfig;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -34,38 +32,6 @@ public class BYGForgeBusEventsHandler {
     static final Object2IntMap<Item> BURN_TIMES = new Object2IntOpenHashMap<>();
 
     public static final Set<ResourceLocation> REGISTERED_PROFESSIONS = new HashSet<>();
-
-    @SubscribeEvent
-    public static void appendBYGVillagerTrades(VillagerTradesEvent event) {
-        TradesConfig tradesConfig = TradesConfig.getConfig();
-        if (tradesConfig.enabled()) {
-            Map<ResourceLocation, Int2ObjectMap<VillagerTrades.ItemListing[]>> tradesByProfession = tradesConfig.tradesByProfession();
-            ResourceLocation professionKey = ForgeRegistries.VILLAGER_PROFESSIONS.getKey(event.getType());
-            if (tradesByProfession.containsKey(professionKey)) {
-                REGISTERED_PROFESSIONS.add(professionKey);
-                Int2ObjectMap<VillagerTrades.ItemListing[]> int2ObjectMap = tradesByProfession.get(professionKey);
-                BYGVillagerTrades.appendTradesList(int2ObjectMap, event.getTrades());
-            } else {
-                BYG.logWarning("\"%s\" is not a registered villager profession, skipping trade entry...".formatted(professionKey.toString()));
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void appendBYGWanderingTraderTrades(WandererTradesEvent event) {
-        TradesConfig tradesConfig = TradesConfig.getConfig();
-        Int2ObjectMap<VillagerTrades.ItemListing[]> wanderingTraderTrades = tradesConfig.wanderingTraderTrades();
-        if (tradesConfig.enabled()) {
-            if (wanderingTraderTrades.containsKey(1)) {
-                event.getGenericTrades().addAll(Arrays.asList(wanderingTraderTrades.get(1)));
-            }
-            if (wanderingTraderTrades.containsKey(2)) {
-                event.getRareTrades().addAll(Arrays.asList(wanderingTraderTrades.get(2)));
-            }
-        } else {
-            BYG.logWarning("Ignoring villager/wandering trader trades added by BYG.");
-        }
-    }
 
     @SubscribeEvent
     public static void onBurnTime(final FurnaceFuelBurnTimeEvent event) {
