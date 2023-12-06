@@ -68,6 +68,7 @@
     "access.world.entity.npc.villagertrades.ItemsForEmeraldsAccess",
     "access.world.entity.npc.villagertrades.SuspiciousStewForEmeraldAccess",
     "access.world.entity.npc.villagertrades.TreasureMapForEmeraldAccess",
+    "common.DataFixersMixin",
     "common.block.MixinCactusBlock",
     "common.block.MixinFarmBlock",
     "common.block.MixinNetherrackBlock",
