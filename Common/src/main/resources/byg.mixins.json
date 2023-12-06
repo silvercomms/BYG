@@ -63,7 +63,6 @@
     "access.WeightedListAccess",
     "access.WoodButtonBlockAccess",
     "access.WoodTypeAccess",
-    "common.DataFixersMixin",
     "common.block.MixinCactusBlock",
     "common.block.MixinFarmBlock",
     "common.block.MixinNetherrackBlock",

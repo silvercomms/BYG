@@ -43,6 +43,9 @@
     ],
     "server": [
       "potionstudios.byg.server.BYGFabricDedicatedServer"
+    ],
+    "mm:early_risers": [
+      "potionstudios.byg.asm.BygEarlyRiser"
     ]
   },
   "mixins": [
