@@ -3,7 +3,6 @@ import groovy.json.JsonSlurper
 
 plugins {
     id 'java'
-    id 'idea'
     id 'com.matyrobbrt.mc.registrationutils' version '1.20.1-1.0.0'
 }
 
@@ -12,13 +11,11 @@ registrationUtils {
     projects {
         Common { type 'common'; project ':Common' }
         Fabric { type 'fabric'; project ':Fabric' }
-        Forge { type 'forge'; project ':Forge' }
     }
 }
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'idea'
 
     java.toolchain.languageVersion = JavaLanguageVersion.of(17)
     java.withSourcesJar()

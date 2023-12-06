@@ -27,7 +27,7 @@ public class FloweringJacarandaBushBlock extends JacarandaBushBlock implements B
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
         return true;
     }
 

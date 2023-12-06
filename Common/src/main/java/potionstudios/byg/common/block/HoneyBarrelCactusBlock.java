@@ -54,7 +54,7 @@ public class HoneyBarrelCactusBlock extends AbstractBarrelCactusBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader blockGetter, @NotNull BlockPos blockPos, @NotNull BlockState blockState, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader blockGetter, @NotNull BlockPos blockPos, @NotNull BlockState blockState) {
         return false;
     }
 

@@ -42,7 +42,7 @@ public class HangingFruitLeavesBlock extends BYGLeavesBlock implements Bonemeala
 
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos blockPos, BlockState blockState, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos blockPos, BlockState blockState) {
         return true;
     }
 

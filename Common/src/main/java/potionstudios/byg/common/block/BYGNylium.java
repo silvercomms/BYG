@@ -39,7 +39,7 @@ public class BYGNylium extends NyliumBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader $$0, BlockPos $$1, BlockState $$2, boolean $$3) {
+    public boolean isValidBonemealTarget(LevelReader $$0, BlockPos $$1, BlockState $$2) {
         return this.feature.get() != null;
     }
 

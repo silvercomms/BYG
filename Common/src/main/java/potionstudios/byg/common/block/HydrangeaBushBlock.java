@@ -26,7 +26,7 @@ public class HydrangeaBushBlock extends BYGFlowerBlock implements BonemealableBl
 
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos blockPos, BlockState blockState, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos blockPos, BlockState blockState) {
         return true;
     }
 

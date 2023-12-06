@@ -41,7 +41,7 @@ public class ChangingLeavesBlock extends BYGLeavesBlock implements BonemealableB
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos blockPos, BlockState blockState, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos blockPos, BlockState blockState) {
         return true;
     }
 

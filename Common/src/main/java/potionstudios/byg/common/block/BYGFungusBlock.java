@@ -31,7 +31,7 @@ public class BYGFungusBlock extends FungusBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader blockGetter, BlockPos pos, BlockState state) {
         return true;
     }
 

@@ -41,7 +41,7 @@ public class AbstractBarrelCactusBlock extends Block implements BonemealableBloc
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
         return true;
     }
 

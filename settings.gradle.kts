@@ -8,7 +8,8 @@ pluginManagement.repositories {
         name = "Sponge Snapshots"
         url = uri("https://repo.spongepowered.org/repository/maven-public/")
     }
+    maven { url = uri("https://maven.neoforged.net/releases") }
 }
 
 rootProject.name = "BYG"
-include("Common", "Fabric", "Forge")
+include("Common", "Fabric")

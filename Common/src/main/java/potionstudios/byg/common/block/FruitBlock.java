@@ -98,7 +98,7 @@ public class FruitBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return state.getValue(AGE) < MAX_AGE;
     }
 

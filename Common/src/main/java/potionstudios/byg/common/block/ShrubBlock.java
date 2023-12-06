@@ -39,7 +39,7 @@ public class ShrubBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
         return true;
     }
 
