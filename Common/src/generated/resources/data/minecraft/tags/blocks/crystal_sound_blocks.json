@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "byg:therium_crystal_block",
+    "byg:therium_crystal_cluster",
+    "byg:large_therium_crystal_bud",
+    "byg:medium_therium_crystal_bud",
+    "byg:small_therium_crystal_bud"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "byg:cryptic_stone",
+    "byg:cryptic_magma_block",
+    "byg:purpur_stone",
+    "minecraft:end_stone"
+  ]
+}
