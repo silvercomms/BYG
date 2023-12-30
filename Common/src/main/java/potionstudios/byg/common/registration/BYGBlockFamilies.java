@@ -287,6 +287,7 @@ public class BYGBlockFamilies {
             .fenceGate()
             .hangingSign()
             .log()
+            .leaves()
             .pressurePlate()
             .sign()
             .slab()

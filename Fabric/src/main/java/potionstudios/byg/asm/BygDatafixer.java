@@ -27,7 +27,6 @@ public class BygDatafixer {
             Map.entry("byg:cherry_sign", "minecraft:cherry_sign"),
             Map.entry("byg:cherry_boat", "minecraft:cherry_boat"),
             Map.entry("byg:cherry_chest_boat", "minecraft:cherry_chest_boat"),
-            Map.entry("byg:maple_leaves", "byg:red_maple_leaves"),
             Map.entry("byg:soapstone", "minecraft:stone")
     );
 }
